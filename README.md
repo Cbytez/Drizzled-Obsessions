@@ -1,0 +1,3 @@
+Website for the Drizzled Obsessions Bakery which is a fictitious bakery that sells drizzled pastries, cakes, and cookies. The website is designed to showcase the bakery's products and services, including their unique drizzled pastries, cakes, and cookies.
+
+The website is built using HTML, CSS, and JavaScript. It includes a navigation menu, a header with a primary image, a footer, and a main section with various sections for pastries, cakes, and cookies. The website also includes a responsive design that adjusts to different screen sizes.
