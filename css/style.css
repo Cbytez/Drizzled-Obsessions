@@ -10,6 +10,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    outline: 2px solid lime;
 }
 
 
@@ -372,6 +373,7 @@ h2{
   font-weight: bold; 
   text-align: center;
   font-size: 3rem;
+  width: auto !important;
 }
 
 html{
@@ -387,6 +389,7 @@ hr{
 
 main{
   background-color: #000;
+  
 }
 
 .navigation{
@@ -518,6 +521,7 @@ pastry_col4{
   gap: 2rem;
   margin: 2rem;
   padding: 1rem;
+  text-wrap: wrap;
 }
 
 .pastry_row3{
@@ -569,16 +573,12 @@ pastry_col4{
   grid-template-areas: stack;
   height: auto;
   margin: 5rem auto 5rem auto;
+  /* outline: 2px solid lime; */
   padding: 1rem;
   width: auto;
 }
 
-/* .primary-header > *{
-  
-  grid-area: stack;
-  grid-row: auto;
-  grid-auto-flow: row;
-} */
+
 
 .responsive{
   width: 100%;
