@@ -82,6 +82,13 @@ body{
   width: 150px;
 }
 
+.cake_img:hover{
+  transform: scale(1.5);
+  cursor: pointer;
+  box-shadow: 0 2px #000;
+  transition: transform 0.3s ease-in-out;
+}
+
 .cake_row1{
   align-items: center;  
   display: grid;
@@ -232,6 +239,13 @@ body{
   height: 100px;
   width: 100px;
 }
+
+/* .dcm_img1,.dcm_img2,.dcm_img3,.dcm_img4,.dcm_img5,.dcm_img6,.dcm_img7,.dcm_img8,.dcm_img9,.dcm_img10,.dcm_img11,.dcm_img12,.dcm_img13,.dcm_img14:hover{
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 2px #000;
+  transform: scale(2);
+} */
 
 
 
@@ -388,6 +402,13 @@ hr{
   border-radius: 20px;
   padding: 1rem;
   background-image: linear-gradient(to right bottom, #000000, #2f171e, #592437, #863151, #b73e6c, #ba3f6e, #be4171, #c14273, #97385c, #702d46, #4b2230, #28161c);
+}
+
+#img:hover{
+  cursor: pointer;
+  transform: scale(2);
+  transition: transform 0.3s ease-in-out;
+
 }
 
 main{
