@@ -240,14 +240,6 @@ body{
   width: 100px;
 }
 
-/* .dcm_img1,.dcm_img2,.dcm_img3,.dcm_img4,.dcm_img5,.dcm_img6,.dcm_img7,.dcm_img8,.dcm_img9,.dcm_img10,.dcm_img11,.dcm_img12,.dcm_img13,.dcm_img14:hover{
-  cursor: pointer;
-  transition: transform 0.3s ease-in-out;
-  box-shadow: 0 2px #000;
-  transform: scale(2);
-} */
-
-
 
 .drizzle{
   margin-top: 25rem;  
@@ -427,13 +419,11 @@ main{
 .master{ 
   background-image: url(../images/fotor-ai-2024102602318.jpg);
   background-position: center;
-  background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: cover;
+  background-size: cover, contain;
   height: auto;
   z-index: 1;
   background-color: #000;
-  /* opacity: 60%; */
   width: 100%;
 }
 
