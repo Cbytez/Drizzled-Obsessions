@@ -412,9 +412,29 @@ hr{
 }
 
 main{
-  background-color: #000;
+  background-image: url(../images/fotor-ai-202410260525.jpg);
+  background-position: center;
+  /* background-repeat: 75%; */
+  background-attachment: fixed;
+  background-size: contain;
   height: auto;
   width: auto;
+  width: 100%;
+  z-index: 1;
+}
+
+/* picture background with 3d scrolling  */
+.master{ 
+  background-image: url(../images/fotor-ai-2024102602318.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: auto;
+  z-index: 1;
+  background-color: #000;
+  /* opacity: 60%; */
+  width: 100%;
 }
 
 .navigation{
