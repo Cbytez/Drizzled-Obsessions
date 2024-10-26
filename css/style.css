@@ -10,7 +10,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    outline: 2px solid lime;
+    /* outline: 2px solid lime; */
+    /* background: hsl(0, 100%, 50%); */
 }
 
 
@@ -96,7 +97,7 @@ body{
   background-color: #000;
   display: grid;
   margin: 0 auto;
-  max-height: 100vh;
+  max-height: auto;
   width: 95%;
 }
 
@@ -350,6 +351,7 @@ footer{
   left: 0;
   bottom: 0;
   text-align: center;
+  width: auto !important;
 }
 
 h1{ 
@@ -365,6 +367,7 @@ h1{
   position: relative;
   top: 0;
   z-index: 1;
+  width: auto !important;
 }
 
 h2{
@@ -389,7 +392,8 @@ hr{
 
 main{
   background-color: #000;
-  
+  height: auto;
+  width: auto;
 }
 
 .navigation{
@@ -522,6 +526,7 @@ pastry_col4{
   margin: 2rem;
   padding: 1rem;
   text-wrap: wrap;
+  width: auto;
 }
 
 .pastry_row3{
