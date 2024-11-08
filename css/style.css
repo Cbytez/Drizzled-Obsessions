@@ -203,6 +203,42 @@ body{
   width: 125px;
 }
 
+.cookie_img9{
+  background-image: url(../images/pexels-lucian-pirvu-4161529.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  float: right;
+  height: 125px;
+  width: 125px;
+}
+
+.cookie_img10{
+  background-image: url(../images/pexels-ozrenildo-1291712.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  float: right;
+  height: 125px;
+  width: 125px;
+}
+
+.cookie_img11{
+  background-image: url(../images/pexels-solodsha-8105105.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  float: right;
+  height: 125px;
+  width: 125px;
+}
+
+.cookie_img12{
+  background-image: url(../images/pexels-skyler-ewing-266953-8927931.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  float: right;
+  height: 125px;
+  width: 125px;
+}
+
 .cookies_row1{
   align-items: center;  
   display: grid;
