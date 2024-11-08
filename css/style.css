@@ -185,6 +185,24 @@ body{
   width: 125px;
 }
 
+.cookie_img7{
+  background-image: url(../images/pexels-dima-valkov-1186343-3734027.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  float: right;
+  height: 125px;
+  width: 125px;
+}
+
+.cookie_img8{
+  background-image: url(../images/pexels-jill-wellington-1638660-3776942.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  float: right;
+  height: 125px;
+  width: 125px;
+}
+
 .cookies_row1{
   align-items: center;  
   display: grid;
