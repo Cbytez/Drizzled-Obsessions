@@ -167,6 +167,24 @@ body{
   width: 125px;
 }
 
+.cookie_img5{
+  background-image: url(../images/fotor-ai-202410260525.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  float: right;
+  height: 125px;
+  width: 125px;
+}
+
+.cookie_img6{
+  background-image: url(../images/pexels-anete-lusina-18613512.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  float: right;
+  height: 125px;
+  width: 125px;
+}
+
 .cookies_row1{
   align-items: center;  
   display: grid;
