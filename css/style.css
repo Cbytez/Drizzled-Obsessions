@@ -158,6 +158,15 @@ body{
   width: 125px;
 }
 
+.cookie_img4{
+  background-image: url(../images/pexels-alleksana-6431579.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  float: right;
+  height: 125px;
+  width: 125px;
+}
+
 .cookies_row1{
   align-items: center;  
   display: grid;
