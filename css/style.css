@@ -536,13 +536,23 @@ h2{
   width: auto !important;
 }
 
+.head_cakes{
+  font-family: "AlexBrush-Regular";
+  color: #00e6e4;
+  font-weight: bold; 
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 2rem;
+  width: auto !important;
+}
+
 .head_cookie{
   font-family: "AlexBrush-Regular";
   color: #00e6e4;
   font-weight: bold; 
   text-align: center;
   font-size: 3rem;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   width: auto !important;
 }
 
