@@ -846,13 +846,11 @@ pastry_col4{
   border-radius: 20px;
   padding: 1rem;
   background-image: linear-gradient(to right bottom, #000000, #2f171e, #592437, #863151, #b73e6c, #ba3f6e, #be4171, #c14273, #97385c, #702d46, #4b2230, #28161c); 
-  /* background-size: cover; */
   border-radius: 20px;
   display: grid;
   grid-template-areas: stack;
   height: auto;
   margin: 5rem auto 5rem auto;
-  /* outline: 2px solid lime; */
   padding: 1rem;
   width: auto;
 }
@@ -991,6 +989,18 @@ p{
 .tier-title{
   color: #000;
   font-weight: bold;
+}
+
+.wcake_img{
+  border-radius: 20px;
+  display: block;
+  margin: 1rem auto 1rem auto;
+  height: 200px;
+  width: 200px;
+}
+
+.wedding-link{
+  text-decoration: none;
 }
 
 .wtp-title{
