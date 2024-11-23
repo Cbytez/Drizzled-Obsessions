@@ -874,6 +874,7 @@ pastry_col4{
   flex: 1;
   max-width: 300px;
   padding: 2rem;
+  margin: 0 1rem;
   background: linear-gradient(to left bottom, #000000, #2f171e, #592437, #863151, #b73e6c, #ba3f6e, #be4171, #c14273, #97385c, #702d46, #4b2230, #28161c);
   border-radius: 10px;
   box-shadow: 0 2px 15px rgba(0,0,0,0.1);
