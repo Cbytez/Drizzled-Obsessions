@@ -123,7 +123,7 @@ function validateForm() {
 document.addEventListener('DOMContentLoaded', function() {
   const backToTop = document.getElementById('back-to-top');
   
-  // Show button when user scrolls down 300px
+  // Show button when user scrolls down 800px
   window.addEventListener('scroll', function() {
       if (window.pageYOffset > 800) {
           backToTop.classList.add('show');
