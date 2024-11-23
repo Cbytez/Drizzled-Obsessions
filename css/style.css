@@ -98,6 +98,12 @@ body{
   text-wrap: wrap;
 }
 
+.contact-field {
+  display: none !important;
+  position: absolute !important;
+  left: -9999px !important;
+}
+
 .contact-form{
   background-color: #000;
   background-image: linear-gradient(to right bottom, #000000, #2f171e, #592437, #863151, #b73e6c, #ba3f6e, #be4171, #c14273, #97385c, #702d46, #4b2230, #28161c);
@@ -115,6 +121,8 @@ body{
 .contact-form input, textarea{
   border: 1px solid rgba(255,255,255,0.18);
   border-radius: 20px;
+  color: #00e6e4;
+  font-size: 1.5rem;
   padding: 1rem;
   width: 35%;
 }
@@ -142,7 +150,7 @@ body{
 
 .contact-form button:hover{
   background-color: #000;
-  border: 1px solid rgba(255,255,255,0.18);
+  border: 2px solid #00e6e4;
   border-radius: 20px;
   color: #00e6e4;
   font-size: 2rem;
@@ -158,14 +166,41 @@ body{
   font-size: 2rem;
   width: 12rem;
 }
+/* contact button loader */
 
+.submit-btn {
+  position: relative;
+  padding: 10px 20px;
+  min-width: 120px;
+}
+
+.button-loader {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.submit-btn.loading .button-text {
+  visibility: hidden;
+}
+
+.submit-btn.loading .button-loader {
+  display: inline-block !important;
+}
+
+/* Optional: Disable button while loading */
+.submit-btn.loading {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+/* contact button loader end */
 
 
 .container{
   background-color: #000;
   display: grid;
   margin: 0 auto;
-  max-height: auto;
+  max-height: fit-content;
   width: 95%;
 }
 
@@ -550,9 +585,9 @@ body{
 .elegant-intro {
   max-width: 800px;
   margin: 0 auto;
-  line-height: 1.5;
+  line-height: 1.3;
   color: #000;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-family: "sans-serif";
   font-weight: bold;
 }
@@ -594,7 +629,7 @@ h2{
   color: #00e6e4;
   font-weight: bold; 
   text-align: center;
-  font-size: 3rem;
+  font-size: 3.3rem;
   width: auto !important;
 }
 
@@ -778,7 +813,7 @@ pastry_col3{
   font-family: sans-serif;
   font-size: 1.2rem;
   height: auto;
-  margin: 2rem 1 rem 1 rem 1rem;
+  margin: 2rem 1rem 1rem 1rem;
   padding: 1rem;
   text-align: center;
   text-wrap: wrap;
@@ -910,8 +945,6 @@ pastry_col4{
   padding: 1rem;
   background-image: linear-gradient(to right bottom, #000000, #2f171e, #592437, #863151, #b73e6c, #ba3f6e, #be4171, #c14273, #97385c, #702d46, #4b2230, #28161c); 
   border-radius: 20px;
-  display: grid;
-  grid-template-areas: stack;
   height: auto;
   margin: 5rem auto 5rem auto;
   padding: 1rem;
@@ -1031,7 +1064,7 @@ pastry_col4{
 
 p{
   text-align: center;
-  text-wrap: pretty;
+  /* text-wrap: pretty; */
 }
 
 .tier-card{

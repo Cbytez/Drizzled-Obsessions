@@ -33,22 +33,44 @@
         <form>
           <label for="name">Name:</label>
           <br>
-          <input type="text" id="name" name="name">
+          <input type="text" id="name" name="name" placeholder="First and Last Name" required pattern="[A-Za-z]{2,}" title="Please enter your first and last name">
+          <br>
+          <p id="nameError" style="color: red; display: none;">Please enter your first and last name< (letters only)/p>
         </form>
         <br>
         <form>
           <label for="email">Email:</label>
           <br>
-          <input type="email" id="email" name="email">
+          <input type="email" id="email" name="email" placeholder="Email Address" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}" title="Please enter a valid email address">
+          <br>
+          <p id="emailError" style="color: red; display: none;">Please enter a valid email address< (letters, numbers, and symbols only and example: example@example.com)/p>
         </form>
         <br>
         <form>
           <label for="message">Message:</label>
           <br>
-          <textarea id="message" name="message"></textarea>
+          <textarea id="message" name="message" placeholder="Your Message" required pattern="[A-Za-z0-9]{1,}" title="Please enter a message"></textarea>
+          <br>
+          <p id="messageError" style="color: red; display: none;">Please enter a message< (letters and numbers only and at least 10 characters)/p>
         </form>
         <br>
-        <button>Submit</button>
+
+        <!-- Honeypot field - hidden from real users but visible to bots -->
+        <div class="contact-field" style="display: none !important;" aria-hidden="true">
+          <label for="website">Website</label>
+          <input type="text" 
+                id="website" 
+                name="website" 
+                autocomplete="off" 
+                tabindex="-1">
+        </div>
+
+          <button type="button" onclick="validateForm()" id="submitButton" class="submit-btn">
+              <span class="button-text">Submit</span>
+              <span class="button-loader" style="display: none;">
+                  <i class="fas fa-spinner fa-spin"></i>
+              </span>
+          </button>
       </div>
       <hr>
     </div>
