@@ -118,5 +118,29 @@ function validateForm() {
   }
 }
 
+
+// Back to Top functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const backToTop = document.getElementById('back-to-top');
+  
+  // Show button when user scrolls down 300px
+  window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 800) {
+          backToTop.classList.add('show');
+      } else {
+          backToTop.classList.remove('show');
+      }
+  });
+  
+  // Smooth scroll to top when clicked
+  backToTop.addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+      });
+  });
+});
+
 // Call setup function when page loads
 document.addEventListener('DOMContentLoaded', setupRealTimeValidation);
