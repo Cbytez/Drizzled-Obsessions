@@ -227,6 +227,8 @@ body{
 .container{
   background-color: #000;
   display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(1, 1fr);
   margin: 0 auto;
   max-height: fit-content;
   width: 95%;
@@ -1040,22 +1042,22 @@ pastry_col4{
 .img1{
   float: left;
   margin: 5px;
-  height: 175px;
-  width: 325px;
+  height: 10em;
+  width: 15em;
 }
 
 .img2{
   float: right;
   margin: 5px;
-  height: 300px;
-  width: 250px;
+  height: 10em;
+  width: 10em;
 }
 
 .img3{
   float: left;
   margin: 5px;
-  height: 250px;
-  width: 250px;
+  height: 10em;
+  width: 10em;
 }
 
 .img4{
@@ -1142,14 +1144,216 @@ p{
   padding: 3rem 1rem;
 }
 
+/* Base styles remain the same */
+
 /* Media Queries */
-@media (max-width: 768px) {
-    .service-highlights {
-        padding: 1rem;
-        gap: 1rem;
-    }
-    
-    .service-card {
-        padding: 1.5rem;
-    }
+
+@media (max-width: 1366px) {
+  .cake_row1, .cookies_row1, .cookies_row2, .pastry_row1, .pastry_row2, .pie_row1 {
+      grid-template-columns: repeat(3, 1fr);
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      text-wrap: wrap;
+      width: auto;
+
   }
+  
+  .drizzle, .drizzle1, .drizzle2, .drizzle3 {
+      width: 70%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .cake_row1, .cookies_row1, .cookies_row2, .pastry_row1, .pastry_row2, .pie_row1 {
+      grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .drizzle, .drizzle1, .drizzle2, .drizzle3 {
+      width: 70%;
+  }
+}
+
+@media (max-width: 1050px) {
+  .cake_row1, .cookies_row1, .cookies_row2, .pastry_row1, .pastry_row2, .pie_row1 {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .drizzle, .drizzle1, .drizzle2, .drizzle3 {
+    width: 70%;
+}
+}
+
+@media (max-width: 900px) {
+  .cake_row1, .cookies_row1, .cookies_row2, .pastry_row1, .pastry_row2, .pie_row1 {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      align-items: center;
+      gap: 1rem;
+  }
+
+  .drizzle, .drizzle1, .drizzle2, .drizzle3, img, img1, img2, img3 {
+    width: 90%;
+    margin: .5rem auto 1rem auto;
+    float: none;
+    font-size: 90%;
+    text-align: center;
+    word-wrap: break-word;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navigation{
+    width: 90%;
+    justify-content: center;
+    margin: .5rem auto;
+  }
+
+  .navigation ul li {
+      padding: 0.5rem;
+      margin: 0.5rem;
+      width: 90%;
+  }
+
+  .navigation ul li a {
+      font-size: 1.3rem;
+  }
+
+  .primary-header{
+    width: 90%;
+    margin: 1rem auto 0 auto;
+  }
+
+  h1 {
+      font-size: 3rem;
+  }
+
+  h2 {
+      font-size: 2.5rem;
+  }
+
+  hr{
+    margin: 1rem auto;
+    width: 90%;
+  }
+
+  .service-highlights{
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      text-wrap: wrap;
+  }
+
+  .service-card{
+    width: 90%;
+  }
+}
+
+@media (max-width: 500px) {
+  .cake_row1, .cookies_row1, .cookies_row2, .pastry_row1, .pastry_row2, .pie_row1 {
+      grid-template-columns: 1fr;
+  }
+
+  .drizzle, .drizzle1, .drizzle2, .drizzle3, img, img1, img2, img3 {
+      width: 90%;
+      margin: .5rem auto 1rem auto;
+      float: none;
+      font-size: 90%;
+      text-align: center;
+      text-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .contact-form input, .contact-form textarea {
+      width: 90%;
+  }
+
+  .container{
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-section{
+    width: 90%;
+    display: flex;
+    font-size: 1.75rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 15px auto 5px auto;
+    height: 30rem;
+  }
+
+  img1{
+    height: 150px;
+    width: 150px;
+  }
+
+  .navigation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    min-width: 450px;
+    width: 90%;
+  }
+
+  .navigation ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 90%;
+    margin-bottom: 0;
+  }
+
+  .navigation ul li {
+      display: block;
+      margin: 0.2rem 0;
+      width: 90%;
+  }
+
+  .phtext{
+    font-size: 1.2rem;
+  }
+
+  .primary-header{
+    width: 90%;
+    margin: 1rem auto 0 auto;
+  }
+
+  .button {
+      min-width: 16rem;
+      font-size: 1.5rem;
+  }
+
+  .button:hover{
+    background-color: #000;
+    color: #00e6e4;
+  }
+
+  hr{
+    margin: 1rem auto;
+    width: 90%;
+  } 
+
+  .service-highlights{
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    text-wrap: wrap;
+  }
+
+  .service-card{
+    width: 90%;
+  }
+
+
+}
