@@ -624,6 +624,17 @@ body{
   padding: 0 20px;
 }
 
+.fa-solid fa-user{
+  /* float: right;  */
+  font-family: "sans-serif"; 
+  /* margin-right: 1rem; */
+  color: #00e6e4;
+
+  a:hover{
+    color: #000;
+  }
+}
+
 .fa-shoppingcart{
   float: right;
   margin-right: 1rem;
