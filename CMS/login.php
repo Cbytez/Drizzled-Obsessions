@@ -8,6 +8,7 @@
 <body>
     <div class="container">
         <h1>Login</h1>
+        <p>Please enter your username and password to login.</p>
     </div>
 </body>
 </html>
