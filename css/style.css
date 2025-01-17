@@ -50,9 +50,7 @@ body{
   background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255, 255, 255, 0));
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.18);
-  /* background-color: #000; */
-  /* border: 5px solid #592437; */
+  border: 2px solid #00e6e4;
   border-radius: 20px;
   color: #00e6e4;
   font-size: 2rem;

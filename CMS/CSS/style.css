@@ -92,14 +92,14 @@ body{
     background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255, 255, 255, 0));
     backdrop-filter: blur(10px);
     border-radius: 20px;
-    display: flex;
+    display: flex; 
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-family: "AlexBrush-Regular";
     font-size: 2.5rem;
     font-weight: bold;
-    color: #00e6e4;    
+    color: #000;    
     width: 15rem;
     padding: 10px;
     margin: 20px auto 10px auto;
@@ -125,7 +125,7 @@ body{
     border: 2px solid #00e6e4;
     border-radius: 20px;
     transition: 0.1s;
-    box-shadow: 0 0 10px #00e6e4;    
+    box-shadow: 0 0 10px #000;    
   }
 
   .register-link{
