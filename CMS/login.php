@@ -11,7 +11,7 @@
         <h1 class="login-title">Login</h1>
         <h2>Please enter your username and password to login.</h2>
         <div class="login-form">
-            <form action="includes/login.php" method="post">
+            <form action="#">
                 <input type="text" name="username" placeholder="Username">
                 <input type="password" name="password" placeholder="Password">
                 <button type="submit" name="submit">Login</button>
