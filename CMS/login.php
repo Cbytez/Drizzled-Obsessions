@@ -8,14 +8,17 @@
 </head>
     <body>
         <div class="container">
-            <h1 class="login-title">Login</h1>
-                <h2 class="login-subtitle">Please enter your username and password to login.</h2>
+            <!-- <h1 class="login-title">Login</h1>
+                <h2 class="login-subtitle">Please enter your username and password to login.</h2> -->
                 <div class="login-form">
                     <form action="#">
-                        <input type="text" name="username" placeholder="Username">
-                        <input type="password" name="password" placeholder="Password">
-                        <button type="submit" name="submit">Login</button>
+                        <h1 class="login-title">Login</h1>
+                        <h2 class="login-subtitle">Please enter your username and password to login.</h2>
+                        <input type="text" name="username" placeholder="Username Required" class="login-input" required autofocus autocomplete="off">
+                        <input type="password" name="password" placeholder="Password Required" class="login-input" required autocomplete="off">
+                        <button type="submit" name="submit" class="login-button">Login</button>
                     </form>
+                    <a href="forgot-password.php" class="login-link">Forgot Password?</a>
                 </div>
         </div>
     </body>
