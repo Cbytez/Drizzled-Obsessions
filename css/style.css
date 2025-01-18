@@ -1159,7 +1159,7 @@ p{
 
 /* Media Queries */
 
-@media (max-width: 1366px) {
+@media screen and (max-width: 1366px) {
   .cake_row1, .cookies_row1, .cookies_row2, .pastry_row1, .pastry_row2, .pie_row1 {
       grid-template-columns: repeat(3, 1fr);
       align-items: center;
@@ -1175,7 +1175,7 @@ p{
   }
 }
 
-@media (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
   .cake_row1, .cookies_row1, .cookies_row2, .pastry_row1, .pastry_row2, .pie_row1 {
       grid-template-columns: repeat(3, 1fr);
   }
@@ -1185,44 +1185,80 @@ p{
   }
 }
 
-@media (max-width: 1050px) {
+@media screen and (max-width: 1050px) {
+  body{
+    background-color: red;
+  }
   .cake_row1, .cookies_row1, .cookies_row2, .pastry_row1, .pastry_row2, .pie_row1 {
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+      width: 90%;
   }
 
-  .drizzle, .drizzle1, .drizzle2, .drizzle3 {
-    width: 70%;
-}
+  .drizzle, .drizzle1, .drizzle2, .drizzle3, .primary-header, .navigation{
+    width: 90%;
+    margin: 1.2rem auto;
+    float: none;
+    text-align: center;
+    text-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
-@media (max-width: 900px) {
+@media screen and (max-width: 992px) {
+  body{
+    background-color: blue;
+  }
   .cake_row1, .cookies_row1, .cookies_row2, .pastry_row1, .pastry_row2, .pie_row1 {
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       align-items: center;
       gap: 1rem;
+      font-size: auto;
+      text-wrap: wrap;
   }
 
-  .drizzle, .drizzle1, .drizzle2, .drizzle3, img, img1, img2, img3 {
+  .button{
+    font-size: 1.2rem;
+    min-width: auto;
+  }
+
+  .drizzle, .drizzle1, .drizzle2, .drizzle3, img, img1, img2, img3{
     width: 90%;
     margin: .5rem auto 1rem auto;
     float: none;
-    font-size: 90%;
+    font-size: auto;
     text-align: center;
     word-wrap: break-word;
     justify-content: center;
     align-items: center;
   }
 
-  .navigation{
+  h2{
+    font-size: auto;
     width: 90%;
+  }
+  .hero-section{
+    width: 90%;
+    margin: 1rem auto;
+  }
+
+  .navigation{
+    width: auto;
+    min-width: auto;
     justify-content: center;
     margin: .5rem auto;
+    font-size: auto;
+    text-wrap: wrap;
   }
 
   .navigation ul li {
       padding: 0.5rem;
       margin: 0.5rem;
-      width: 90%;
+      width: auto;
   }
 
   .navigation ul li a {
@@ -1230,16 +1266,16 @@ p{
   }
 
   .primary-header{
-    width: 90%;
+    width: auto;
     margin: 1rem auto 0 auto;
   }
 
   h1 {
-      font-size: 3rem;
+      font-size: auto;
   }
 
   h2 {
-      font-size: 2.5rem;
+      font-size: auto;
   }
 
   hr{
@@ -1256,20 +1292,21 @@ p{
   }
 
   .service-card{
+    margin: 1rem auto;
     width: 90%;
   }
 }
 
-@media (max-width: 500px) {
+@media screen and (max-width: 500px) {
   .cake_row1, .cookies_row1, .cookies_row2, .pastry_row1, .pastry_row2, .pie_row1 {
       grid-template-columns: 1fr;
   }
 
   .drizzle, .drizzle1, .drizzle2, .drizzle3, img, img1, img2, img3 {
-      width: 90%;
+      width: auto;
       margin: .5rem auto 1rem auto;
       float: none;
-      font-size: 90%;
+      font-size: auto;
       text-align: center;
       text-wrap: wrap;
       justify-content: center;
@@ -1277,15 +1314,20 @@ p{
   }
 
   .contact-form input, .contact-form textarea {
-      width: 90%;
+      width: auto;
   }
 
   .container{
-    width: 90%;
+    width: auto;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     text-align: center;
+  }
+
+  footer{
+    font-size: auto;
+    width: auto;
   }
 
   .hero-section{
@@ -1310,7 +1352,7 @@ p{
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    min-width: 450px;
+    min-width: auto;
     width: 90%;
   }
 
@@ -1320,14 +1362,14 @@ p{
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    width: 90%;
+    width: auto;
     margin-bottom: 0;
   }
 
   .navigation ul li {
       display: block;
       margin: 0.2rem 0;
-      width: 90%;
+      width: auto;
   }
 
   .phtext{
@@ -1335,7 +1377,7 @@ p{
   }
 
   .primary-header{
-    width: 90%;
+    width: auto;
     margin: 1rem auto 0 auto;
   }
 
@@ -1363,7 +1405,8 @@ p{
   }
 
   .service-card{
-    width: 90%;
+    margin: 1rem auto;
+    width: auto;
   }
 
 
