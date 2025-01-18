@@ -196,6 +196,7 @@ body{
 /* contact button loader */
 
 .submit-btn {
+  border: 2px solid #000;
   position: relative;
   padding: 10px 20px;
   min-width: 120px;
