@@ -143,6 +143,8 @@ body{
   margin: 1rem;
   text-align: center;
   text-wrap: wrap;
+  width: 75%;
+  margin: 1rem auto;
 }
 
 .contact-form input, textarea{
@@ -527,9 +529,9 @@ body{
   font-size: 1.5rem;
   height: auto;   
   text-align: center;
-  margin: 5rem 0;
+  margin: 5rem auto;
   padding: 1rem;
-  width: auto%;
+  width: 75%;
 }
 
 .drizzle1{
@@ -548,9 +550,9 @@ body{
   font-size: 1.5rem;
   height: auto;   
   text-align: center;
-  margin: 1rem 0;
+  margin: 1rem auto;
   padding: 1rem; 
-  width: auto;
+  width: 75%;
 }
 
 .drizzle2{
@@ -572,7 +574,7 @@ body{
   text-shadow: 2px 2px 2px #000;
   margin: 5rem auto;
   padding: 1rem; 
-  width: auto;
+  width: 75%;
 }
 
 .drizzle3{
@@ -593,7 +595,7 @@ body{
   text-shadow: 2px 2px 2px #000;
   margin: 5rem auto;
   padding: 1rem; 
-  width: auto;
+  width: 75%;
 }
 
 .Drizzled1{
@@ -705,6 +707,8 @@ h2{
   text-align: center;
   padding: 3rem 1rem;
   background: linear-gradient(to left bottom, #000000, #2f171e, #592437, #863151, #b73e6c, #ba3f6e, #be4171, #c14273, #97385c, #702d46, #4b2230, #28161c);
+  width: 75%;
+  margin: 1rem auto;
 }
 
 .hero-section h2 {
@@ -712,7 +716,8 @@ h2{
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   color: #00e6e4;
   margin-bottom: 1.5rem;
-  
+  width: 75%;
+  margin: 1rem auto;
 }
 
 html{
@@ -724,6 +729,8 @@ hr{
   border-radius: 20px;
   padding: 1rem;
   background-image: linear-gradient(to right bottom, #000000, #2f171e, #592437, #863151, #b73e6c, #ba3f6e, #be4171, #c14273, #97385c, #702d46, #4b2230, #28161c);
+  margin: 1rem auto;
+  width: 75%;
 }
 
 #img:hover{
@@ -753,7 +760,8 @@ main{
 
 .navigation{
   height: auto;
-  width: 100%;
+  width: 80%;
+  margin: 1rem auto;
 
   ul{
     border: 1px solid rgba(255,255,255,0.18);
@@ -996,22 +1004,26 @@ pastry_col4{
 
 .service-highlights {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   justify-content: center;
-  gap: 2rem;
-  padding: 2rem;
+  gap: 1rem;
+  padding: 1rem;
+  width: 75%;
+  margin: 1rem auto;
 }
 
 .service-card {
   text-align: center;
-  flex: 1;
-  max-width: 300px;
+  gap: 1rem;
+  min-width: 300px;
   padding: 2rem;
-  margin: 0 1rem;
   background: linear-gradient(to left bottom, #000000, #2f171e, #592437, #863151, #b73e6c, #ba3f6e, #be4171, #c14273, #97385c, #702d46, #4b2230, #28161c);
   border-radius: 10px;
   box-shadow: 0 2px 15px rgba(0,0,0,0.1);
   transition: transform 0.2s ease;
+  flex: 1;
+  width: auto;
+  margin: 1rem auto;
 }
 
 .service-card:hover {
