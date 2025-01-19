@@ -528,9 +528,8 @@ body{
   height: auto;   
   text-align: center;
   margin: 5rem 0;
-  padding: 1rem; 
-  max-width: 80rem; 
-  width: 50%;
+  padding: 1rem;
+  width: auto%;
 }
 
 .drizzle1{
@@ -547,13 +546,11 @@ body{
   font-family: "sans-serif";
   font-weight: bold;
   font-size: 1.5rem;
-  float: right;
   height: auto;   
   text-align: center;
   margin: 1rem 0;
   padding: 1rem; 
-  max-width: 80rem; 
-  width: 50%;
+  width: auto;
 }
 
 .drizzle2{
@@ -570,14 +567,12 @@ body{
   font-family: "sans-serif";
   font-weight: bold;
   font-size: 1.5rem;
-  float: left;
   height: auto;   
   text-align: center;
   text-shadow: 2px 2px 2px #000;
-  margin: 30rem 0 15rem 0;
+  margin: 5rem auto;
   padding: 1rem; 
-  max-width: 80rem; 
-  width: 50%;
+  width: auto;
 }
 
 .drizzle3{
@@ -593,14 +588,12 @@ body{
   font-family: "sans-serif";
   font-weight: bold;
   font-size: 1.5rem;
-  float: right;
   height: auto;   
   text-align: center;
   text-shadow: 2px 2px 2px #000;
-  margin: 38rem 0 5rem 0;
+  margin: 5rem auto;
   padding: 1rem; 
-  max-width: 80rem; 
-  width: 50%;
+  width: auto;
 }
 
 .Drizzled1{
@@ -1176,12 +1169,24 @@ p{
 }
 
 @media screen and (max-width: 1200px) {
+  body{
+    background-color: yellow;
+  }
   .cake_row1, .cookies_row1, .cookies_row2, .pastry_row1, .pastry_row2, .pie_row1 {
       grid-template-columns: repeat(3, 1fr);
   }
   
   .drizzle, .drizzle1, .drizzle2, .drizzle3 {
-      width: 70%;
+      width: 90%;
+      margin: 1rem auto;
+      font-size: auto;
+      text-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
   }
 }
 
@@ -1207,6 +1212,23 @@ p{
     align-items: center;
     justify-content: center;
   }
+
+  .contact-form{
+    width: 90%;
+    margin: 1rem auto;
+  }
+
+  hr{
+    width: 90%;
+    margin: 1rem auto;
+  } 
+
+  .navigation{
+    width: 90%;
+    margin: 1rem auto;
+  }
+
+
 }
 
 @media screen and (max-width: 992px) {
@@ -1247,7 +1269,7 @@ p{
   }
 
   .navigation{
-    width: auto;
+    width: 90%;
     min-width: auto;
     justify-content: center;
     margin: .5rem auto;
@@ -1266,7 +1288,7 @@ p{
   }
 
   .primary-header{
-    width: auto;
+    width: 90%;
     margin: 1rem auto 0 auto;
   }
 
@@ -1303,7 +1325,7 @@ p{
   }
 
   .drizzle, .drizzle1, .drizzle2, .drizzle3, img, img1, img2, img3 {
-      width: auto;
+      width: 90%;
       margin: .5rem auto 1rem auto;
       float: none;
       font-size: auto;
@@ -1340,6 +1362,10 @@ p{
     flex-direction: column;
     margin: 15px auto 5px auto;
     height: 30rem;
+  }
+
+  h2{
+    width: 90%;
   }
 
   img1{
