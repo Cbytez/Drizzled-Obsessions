@@ -2,6 +2,18 @@
 <?php session_start(); ?>
 <?php include 'Admin/Includes/admin_functions.php'; ?>
 
+<?php
+
+userLoginCheckAndRedirect('admin/index.php');
+
+if (ifItIsMethod('post')) {
+	if (isset($_POST['username']) && isset($_POST['password'])) {
+		login_user($_POST['username'], $_POST['password']);
+	}else{		
+		echo "Login Failed, Username and/or password incorrect*";
+	}
+}
+?>
 
 
 
@@ -17,7 +29,7 @@
     <body>
         <div class="container">
             <div class="login-form">
-                <form action="#">
+                <form action="login.php" method="post">
                         <h1 class="login-title">Sign In</h1>
                         <h2 class="login-subtitle">Please enter your username and password to login.</h2>
 
