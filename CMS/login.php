@@ -1,3 +1,11 @@
+<?php include 'db.php'; ?>
+<?php session_start(); ?>
+<?php include 'functions.php'; ?>
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
