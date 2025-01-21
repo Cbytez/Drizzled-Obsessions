@@ -180,7 +180,7 @@
 
        $mail->Subject = 'Registration Approved!';
 
-       $mail->Body = '<p>Semper Fi '. $username .' , <br /><br />Thank you for registering to our site and we hope you enjoy your stay with us. For your password if you did not write it down and already have forgotten it then please use our Forgot Password feature on our site at login. If you have any questions or concerns then please do not hesitate to reach out using an email to Admin or to one of the other forms of communication through the site or by contacting your chain of command directly. We are honored to have you among us and look forward to the future together. OOH RAH! <br /><br /> K3Marines.com </p>';
+       $mail->Body = '<p>Welcome to Drizzled Obsessions '. $username .' , <br /><br />Thank you for registering to our site and we hope you enjoy your stay with us. For your password, We suggest you write it down so your don\'t forget it. If you do forget it then please use our Forgot Password feature on our site at login. If you have any questions or concerns then please do not hesitate to reach out using our Contacts page. We are honored to have you with us and look forward to our obsessive future together. Happy and deep Obsessing! <br /><br /> Drizzled Obsessions.com </p>';
 
 
 
@@ -194,8 +194,104 @@
 
        }
 
+       mysqli_stmt_close($stmt3291);
 
 
 
+
+    }
+?>
+
+<?php
+    function login_user($username, $password){
+
+        global $db;
+		$length = 50;
+		$otoken = bin2hex(openssl_random_pseudo_bytes($length));
+
+		$stmt1984 = mysqli_prepare($db, "SELECT online_id, username, otoken FROM members_online WHERE username = '$username'");
+		
+		mysqli_stmt_execute($stmt1984);
+		mysqli_stmt_store_result($stmt1984);
+
+		$member_count = $stmt1984 -> num_rows;
+
+		if($member_count > 0){
+			echo " <h3 class='text-center'>That User Is Already Logged In!</h3>";
+		}else{
+			
+
+			if(empty($username) || empty('username') && empty($password) || empty('password')){
+						echo " <h3 class='text-center'>Fields Cannot Be Empty or Blank!</h3>";
+						
+				}elseif (empty($password) || empty('password')) {
+					echo " <h3 class='text-center'>Password Cannot Be Empty Or Blank!</h3>";
+				}else{
+					if($username == $_SESSION['username']){
+						echo " <h3 class='text-center'>That Username is already logged in</h3>";
+				}else{
+					//trim and escape username and password variables
+				$username = trim(mysqli_real_escape_string($db, $username));
+				$password = trim(mysqli_real_escape_string($db, $password));
+
+				$stmt = mysqli_prepare($db, "SELECT username FROM users WHERE username = '$username'");
+
+				mysqli_stmt_execute($stmt);
+
+				mysqli_stmt_store_result($stmt);
+
+				$countsz = $stmt -> num_rows;
+
+				if ($countsz <= 0) {
+					echo "<h3 style='text-align: center;'>Username Incorrect or Not Registered!</h3>";
+				}
+				
+				
+				$stmt6244 = mysqli_prepare($db, "SELECT user_id, username, user_password, user_firstname, user_lastname, user_role FROM users WHERE username = ? ");
+
+
+				mysqli_stmt_bind_param($stmt6244, 's', $username);
+
+				mysqli_stmt_execute($stmt6244);
+				$result = $stmt6244 -> get_result();
+
+				while ($row = $result -> fetch_assoc()):
+						$db_user_id = $row['user_id'];
+						$db_username = $row['username'];
+						$db_user_password = $row['user_password'];
+						$db_user_firstname = $row['user_firstname'];
+						$db_user_lastname = $row['user_lastname'];
+						$db_user_role = $row['user_role'];
+
+
+
+					if (password_verify($password,$db_user_password)) {
+						$_SESSION['user_id'] = $db_user_id;
+						$_SESSION['username'] = $db_username;
+						$_SESSION['firstname'] = $db_user_firstname;
+						$_SESSION['lastname'] = $db_user_lastname;
+						$_SESSION['user_role'] = $db_user_role;
+
+						$stmt1244 = mysqli_prepare($db, "INSERT INTO members_online (online_id, username, otoken) VALUES (?, ?, ?)");				
+						mysqli_stmt_bind_param($stmt1244, 'iss', $online_id, $username, $otoken);
+						mysqli_stmt_execute($stmt1244);
+
+
+					if ($db_user_role == 'admin') {
+						header("location: admin/index.php");
+					}else{
+						header("location: index.php");
+					}
+					}else{
+						echo "<h3 class='text-center'> Password is not correct!</h3>";
+					}
+
+				endwhile;
+
+				mysqli_stmt_close($stmt6244);
+					
+				}
+			}
+		}
     }
 ?>
