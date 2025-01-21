@@ -294,4 +294,11 @@
 			}
 		}
     }
+
+    function logout(){
+        session_destroy();
+        redirect('login.php');
+    }
+    
+    
 ?>
