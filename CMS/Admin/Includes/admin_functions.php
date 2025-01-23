@@ -143,21 +143,21 @@
 ?>
 
 <?php
-    function register_user($username, $email, $user_firstname, $user_lastname, $password){
+    function register_user($username, $user_email, $user_firstname, $user_lastname, $user_password){
         global $db;
 
 
        $username = mysqli_real_escape_string($db, $username);
-       $password = mysqli_real_escape_string($db, $password);
+       $user_password = mysqli_real_escape_string($db, $user_password);
        $user_firstname = mysqli_real_escape_string($db,$user_firstname);
        $user_lastname = mysqli_real_escape_string($db, $user_lastname);
-       $email = mysqli_real_escape_string($db, $email);
+       $user_email = mysqli_real_escape_string($db, $user_email);
 
-       $password = password_hash($password, PASSWORD_BCRYPT, array('cost' => 11) );
+       $user_password = password_hash($user_password, PASSWORD_BCRYPT, array('cost' => 11) );
 
        $stmt3291 = mysqli_prepare($db, "INSERT INTO users (username, user_password, user_firstname, user_lastname, user_email, user_role) VALUES(?,?,?,?,?,?)");
        $user = 'user';
-       mysqli_stmt_bind_param($stmt3291, 'ssssss', $username, $password, $user_firstname, $user_lastname, $email, $user);
+       mysqli_stmt_bind_param($stmt3291, 'ssssss', $username, $user_password, $user_firstname, $user_lastname, $user_email, $user);
        mysqli_stmt_execute($stmt3291);
 
        require '../vendor/autoload.php';
@@ -166,8 +166,8 @@
 
        $mail->isSMTP();
        $mail->Host = 'smtp.stackmail.com';
-       $mail->Username = 'Admin@k3marines.com';
-       $mail->Password = 'KCMCL1253';
+       $mail->Username = 'Admin@DrizzledObsessions.com';
+       $mail->Password = 'DrizzledObsessions1253';
        $mail->Port = 587;
        $mail->SMTPSecure = 'tls';
        $mail->SMTPAuth = true;
@@ -175,8 +175,8 @@
        $mail->CharSet = 'UTF-8';
 
 
-       $mail->setFrom('Admin@k3marines.com');
-       $mail->addAddress($email);
+       $mail->setFrom('Admin@DrizzledObsessions.com');
+       $mail->addAddress($user_email);
 
        $mail->Subject = 'Registration Approved!';
 
