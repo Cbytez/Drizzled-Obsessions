@@ -203,13 +203,13 @@
 ?>
 
 <?php
-    function login_user($username, $password){
+    function login_user($username, $user_password){
 
         global $db;
 		$length = 50;
 		$otoken = bin2hex(openssl_random_pseudo_bytes($length));
 
-		$stmt1984 = mysqli_prepare($db, "SELECT online_id, username, otoken FROM members_online WHERE username = '$username'");
+		$stmt1984 = mysqli_prepare($db, "SELECT user_id, username, otoken FROM users WHERE username = '$username'");
 		
 		mysqli_stmt_execute($stmt1984);
 		mysqli_stmt_store_result($stmt1984);
@@ -221,10 +221,10 @@
 		}else{
 			
 
-			if(empty($username) || empty('username') && empty($password) || empty('password')){
+			if(empty($username) || empty('username') && empty($user_password) || empty('user_password')){
 						echo " <h3 class='text-center'>Fields Cannot Be Empty or Blank!</h3>";
 						
-				}elseif (empty($password) || empty('password')) {
+				}elseif (empty($user_password) || empty('user_password')) {
 					echo " <h3 class='text-center'>Password Cannot Be Empty Or Blank!</h3>";
 				}else{
 					if($username == $_SESSION['username']){
@@ -232,7 +232,7 @@
 				}else{
 					//trim and escape username and password variables
 				$username = trim(mysqli_real_escape_string($db, $username));
-				$password = trim(mysqli_real_escape_string($db, $password));
+				$user_password = trim(mysqli_real_escape_string($db, $user_password));
 
 				$stmt = mysqli_prepare($db, "SELECT username FROM users WHERE username = '$username'");
 
@@ -265,15 +265,15 @@
 
 
 
-					if (password_verify($password,$db_user_password)) {
+					if (password_verify($user_password,$db_user_password)) {
 						$_SESSION['user_id'] = $db_user_id;
 						$_SESSION['username'] = $db_username;
 						$_SESSION['firstname'] = $db_user_firstname;
 						$_SESSION['lastname'] = $db_user_lastname;
 						$_SESSION['user_role'] = $db_user_role;
 
-						$stmt1244 = mysqli_prepare($db, "INSERT INTO members_online (online_id, username, otoken) VALUES (?, ?, ?)");				
-						mysqli_stmt_bind_param($stmt1244, 'iss', $online_id, $username, $otoken);
+						$stmt1244 = mysqli_prepare($db, "INSERT INTO users (user_id, username, otoken) VALUES (?, ?, ?)");				
+						mysqli_stmt_bind_param($stmt1244, 'iss', $user_id, $username, $otoken);
 						mysqli_stmt_execute($stmt1244);
 
 
