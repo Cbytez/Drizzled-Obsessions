@@ -168,7 +168,7 @@
        $mail->Host = 'smtp.stackmail.com';
        $mail->Username = 'Admin@DrizzledObsessions.com';
        $mail->Password = 'DrizzledObsessions1253';
-       $mail->Port = 587;
+       $mail->Port = 25;
        $mail->SMTPSecure = 'tls';
        $mail->SMTPAuth = true;
        $mail->isHTML(true);
@@ -278,9 +278,9 @@
 
 
 					if ($db_user_role == 'admin') {
-						header("location: admin/index.php");
+						header("location: CMS/Admin/index.php");
 					}else{
-						header("location: index.php");
+						header("location: CMS/index.php");
 					}
 					}else{
 						echo "<h3 class='text-center'> Password is not correct!</h3>";
