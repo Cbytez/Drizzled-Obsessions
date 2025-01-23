@@ -1,4 +1,8 @@
-<?php use PHPMailer\PHPMailer\PHPMailer; ?>
+<?php 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
+?>
 <?php
     //for password redirect system
 	function ifItIsMethod($method=NULL){
@@ -162,7 +166,7 @@
 
        require '../vendor/autoload.php';
 
-       $mail = new PHPMailer();
+    //    $mail = new PHPMailer();
 
        $mail->isSMTP();
        $mail->Host = 'smtp.stackmail.com';
