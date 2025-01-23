@@ -1,5 +1,7 @@
 <?php include "includes/admin_header.php"; ?>
 
-<h1>Hello <?php echo $_SESSION['username']; ?></h1>
+<div class="container_admin">
+<h1>Hello Admin</h1>
+</div>
 
 <?php include "includes/admin_footer.php"; ?>

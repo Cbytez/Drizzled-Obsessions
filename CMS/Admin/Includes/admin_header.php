@@ -1,7 +1,8 @@
 <?php ob_start(); ?>
 <?php session_start(); ?>
 
-<?php include "../includes/db.php"; ?>
+<?php include "db.php"; ?>
+<?php include "admin_functions.php"; ?>
 
 
  <?php
@@ -28,7 +29,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="Bakery admin" content="">
     <meta name="Chris Bobka" content="">
-
+    <link rel="stylesheet" type="text/css" href="CMS/CSS/style.css">
     <title>Drizzled Obsessions Admin</title>
     
 

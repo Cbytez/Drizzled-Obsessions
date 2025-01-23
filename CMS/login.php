@@ -1,6 +1,6 @@
 <?php include 'db.php'; ?>
 <?php include 'Admin/Includes/admin_header.php'; ?>
-<?php include 'Admin/Includes/admin_functions.php'; ?>
+
 
 <?php
 
