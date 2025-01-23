@@ -1,10 +1,10 @@
 <?php include 'db.php'; ?>
-<?php session_start(); ?>
+<?php include 'Admin/Includes/admin_header.php'; ?>
 <?php include 'Admin/Includes/admin_functions.php'; ?>
 
 <?php
 
-userLoginCheckAndRedirect('admin/index.php');
+userLoginCheckAndRedirect('Admin/index.php');
 
 if (ifItIsMethod('post')) {
 	if (isset($_POST['username']) && isset($_POST['user_password'])) {
