@@ -1,4 +1,4 @@
-<?php include "includes/admin_header.php"; ?>
+<?php include "Includes/admin_header.php"; ?>
 
 <div class="container_admin">
 <h1>Hello Admin</h1>
@@ -6,7 +6,7 @@
 
 <button class="logout_button" onclick="logout()">Logout</button>
 
-<?php include "includes/admin_footer.php"; ?>
+<?php include "Includes/admin_footer.php"; ?>
 
 <script type="text/javascript">
 function logout(){

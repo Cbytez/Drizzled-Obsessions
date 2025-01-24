@@ -1,19 +1,9 @@
-<?php include 'db.php'; ?>
-<?php include 'Admin/Includes/admin_header.php'; ?>
+<?php include "Includes/db.php"; ?>
+<?php include "Includes/admin_header.php"; ?>
 
 
-<?php
 
-userLoginCheckAndRedirect('Admin/index.php');
 
-if (ifItIsMethod('post')) {
-	if (isset($_POST['username']) && isset($_POST['user_password'])) {
-		login_user($_POST['username'], $_POST['user_password']);
-	}else{		
-		echo "Login Failed, Username and/or password incorrect*";
-	}
-}
-?>
 
 
 
@@ -23,13 +13,13 @@ if (ifItIsMethod('post')) {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="CSS/style.css">
+<link rel="stylesheet" type="text/css" href="CSS/Login-style.css">
 <title>Drizzled Obsessions Admin</title>
 </head>
     <body>
         <div class="container">
             <div class="login-form">
-                <form action="login.php" method="post">
+                <form action="login.php" method="POST">
                         <h1 class="login-title">Sign In</h1>
                         <h2 class="login-subtitle">Please enter your username and password to login.</h2>
 

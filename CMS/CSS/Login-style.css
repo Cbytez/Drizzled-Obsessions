@@ -1,0 +1,114 @@
+@font-face {
+    font-family: "AlexBrush-Regular";
+    src: url(../font/Alex/AlexBrush-Regular.ttf);
+}
+
+body{
+    background-color: #000;
+    color: #00e6e4;
+}   
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.login-form{
+    background-image: linear-gradient(to right bottom, #000000, #2f171e, #592437, #863151, #b73e6c, #ba3f6e, #be4171, #c14273, #97385c, #702d46, #4b2230, #28161c);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 65%;
+    text-align: center;
+    width: auto;
+    margin: 0 auto;
+}
+
+.login-form input{
+    background-color: #000;
+    color: #00e6e4;
+    border: 2px solid #00e6e4;
+    border-radius: 20px;
+    font-size: 1.5rem;
+    height: 2rem;
+    padding: 10px;
+    margin: 10px;
+    width: 65%;
+}
+
+.login-form button{
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid #000;
+    border-radius: 20px;
+    color: #000;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: "AlexBrush-Regular";
+    height: 5rem;
+    margin: 1rem auto;
+    padding: .5rem;
+    min-width: 20rem;
+    max-width: 30rem;
+    text-align: center;
+}
+
+.login-form button:hover{
+  background-color: black;
+  opacity: 80%;
+  border: 2px solid #00e6e4;
+  border-radius: 20px;
+  color: #00e6e4;
+}
+
+.login-form button:active{
+    background-color: #000;
+    box-shadow: 0 2px #000;
+    opacity: 80%;
+    border: 2px solid #00e6e4;
+    transform: translateY(4px);
+    color: #00e6e4;
+}
+
+.login-links{
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+}
+
+.login-links a{
+    color: blue;
+    text-decoration: none;
+}
+
+.login-links a:hover{
+    color: #00e6e4;
+    text-decoration: underline;
+}
+
+.login-subtitle{
+    color: #000;
+    font-family: 'AlexBrush-Regular';
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin: .5rem auto;
+}
+
+.login-title{
+    font-family: 'AlexBrush-Regular';
+    font-size: 5rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 auto;
+}
