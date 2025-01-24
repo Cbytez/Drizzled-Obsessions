@@ -29,7 +29,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="Bakery admin" content="">
     <meta name="Chris Bobka" content="">
-    <link rel="stylesheet" type="text/css" href="CMS/CSS/style.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/stylez.css">
     <title>Drizzled Obsessions Admin</title>
     
 
