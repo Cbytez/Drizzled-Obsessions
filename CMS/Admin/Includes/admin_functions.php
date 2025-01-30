@@ -282,9 +282,9 @@ use PHPMailer\PHPMailer\SMTP;
 
 
 					if ($db_user_role == 'admin') {
-						header("location: Admin/index.php");
+						header("location: /CMS/Admin/index.php");
 					}else{
-						header("location: index.php");
+						header("location: /CMS/index.php");
 					}
 					}else{
 						echo "<h3 class='text-center'> Password is not correct!</h3>";
