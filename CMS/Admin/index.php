@@ -24,7 +24,21 @@
                 <li><a href="customers.php"><i class="fa-solid fa-users"></i> Customers</a></li>
                 <li><a href="sales.php"><i class="fa-solid fa-chart-line"></i> Sales</a></li>
             </ul>
-        </div>  
+        </div> 
+        
+        <div class="admin_notifications">
+            <ul class="admin_notifications_list"> <i class="fa-solid fa-bell"> Notifications:</i> 
+                <li><i class="fa-solid fa-user"></i> 0 New Customers</li>
+                <li><i class="fa-solid fa-cart-shopping"></i> 0 New Orders</li>
+                <li><i class="fa-solid fa-box"></i> 0 New Products</li>
+                <li><i class="fa-solid fa-message"></i> 0 New Customer Messages</li>
+                <li><i class="fa-solid fa-star"></i> 0 New Customer Reviews</li>
+                <li><i class="fa-solid fa-cart-shopping"></i> 0 New Customer Orders</li>
+                <li><i class="fa-solid fa-credit-card"></i> 0 New Customer Payments</li>
+                <li><i class="fa-solid fa-credit-card-refund"></i> 0 New Customer Refunds</li>            
+            </ul>
+            
+        </div>
     </div>
 
 
