@@ -54,7 +54,7 @@
 
 
 <script type="text/javascript">
-function logout(){
-    window.location.href = "../logout.php";
-}
+    function logout(){
+        window.location.href = "../logout.php";
+    }
 </script>

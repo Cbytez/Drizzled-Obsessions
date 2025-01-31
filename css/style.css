@@ -630,10 +630,7 @@ body{
   }
 }
 
-.fa-shoppingcart{
-  float: right;
-  margin-right: 1rem;
-}
+
 
 footer{
   background-color: #000;
@@ -760,10 +757,9 @@ main{
   ul{
     border: 1px solid rgba(255,255,255,0.18);
     border-radius: 20px;
-    padding: 1rem;
     background-image: linear-gradient(to right bottom, #000000, #2f171e, #592437, #863151, #b73e6c, #ba3f6e, #be4171, #c14273, #97385c, #702d46, #4b2230, #28161c);
     font-family: "sans-serif";
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -774,7 +770,7 @@ main{
   li{
     display: inline;
     list-style-type: none; 
-    padding: 1rem;
+    padding: .5rem;
     margin: 1rem;
     text-align: center;
   }
