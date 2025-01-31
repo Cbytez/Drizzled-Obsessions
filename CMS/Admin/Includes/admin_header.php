@@ -1,19 +1,17 @@
-<?php session_start(); ?>
-
 <?php include "db.php"; ?>
 <?php include "admin_functions.php"; ?>
 
 
  <?php
 
-    if (!isset($_SESSION['user_role'])) {
-        header("Location: Admin/index.php");
+    // if (!isset($_SESSION['user_role'])) {
+    //     header("Location: Admin/index.php");
 
-    }
+    // }
 
-    if (!isAdmin($_SESSION['username'])) {
-        header("location: ../index.php");
-    }
+    // if (!isAdmin($_SESSION['username'])) {
+    //     header("location: ../index.php");
+    // }
 
 
  ?>
@@ -31,7 +29,7 @@
     
     <title>Drizzled Obsessions Admin</title>
 
-    <link href="../css/stylez.css" rel="stylesheet" type="text/css">
+    <link href="css/stylez.css" rel="stylesheet" type="text/css">
     
 
 </head>
