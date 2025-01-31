@@ -46,6 +46,20 @@ body{
     font-size: 1rem;
     font-weight: normal;
     color: #00e6e4;
+    font-family: "AlexBrush-Regular";
+}
+
+.admin_footer{
+    background-color: #000;
+    font-size: 2rem;
+    font-weight: normal;
+    color: #00e6e4;
+    font-family: "AlexBrush-Regular";
+    bottom: 0;
+    position: absolute;
+    width: 95%;
+    text-align: center;
+    margin: 1rem auto;
 }
 
 .admin_navigation{
