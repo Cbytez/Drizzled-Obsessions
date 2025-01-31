@@ -23,6 +23,8 @@
                 <li><a href="orders.php"><i class="fa-solid fa-cart-shopping"></i> Orders</a></li>
                 <li><a href="customers.php"><i class="fa-solid fa-users"></i> Customers</a></li>
                 <li><a href="sales.php"><i class="fa-solid fa-chart-line"></i> Sales</a></li>
+                <li><a href="../logout.php"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+                
             </ul>
         </div> 
         
@@ -39,18 +41,17 @@
             </ul>            
         </div>
 
-        <div class="admin_footer">
-            <p>Copyright &copy; 2025 Drizzled Obsessions</p>
-        </div>  
+          
     </div>
 
+    
+
+    <?php include "Includes/admin_footer.php"; ?>
 
 </body>
 </html>
 
-<button class="logout_button" onclick="logout()">Logout</button>
 
-<?php include "Includes/admin_footer.php"; ?>
 
 <script type="text/javascript">
 function logout(){
