@@ -19,7 +19,14 @@
         <div class="admin_navigation">
             <ul>
                 <li><a href="index.php" class="active"><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
-                <li><a href="products.php"><i class="fa-solid fa-box"></i> Products</a></li>
+                <li class="dropdown">
+                    <a href="products.php"><i class="fa-solid fa-box"></i> Products</a>
+                    <ul class="dropdown-content">
+                        <li><a href="add_product.php"><i class="fa-solid fa-plus"></i> Add Product</a></li>
+                        <li><a href="view_products.php"><i class="fa-solid fa-list"></i> View Products</a></li>
+                        <li><a href="categories.php"><i class="fa-solid fa-tags"></i> Categories</a></li>
+                    </ul>
+                </li>
                 <li><a href="orders.php"><i class="fa-solid fa-cart-shopping"></i> Orders</a></li>
                 <li><a href="customers.php"><i class="fa-solid fa-users"></i> Customers</a></li>
                 <li><a href="sales.php"><i class="fa-solid fa-chart-line"></i> Sales</a></li>

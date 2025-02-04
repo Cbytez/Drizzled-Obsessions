@@ -15,16 +15,7 @@
         <div class="admin_navigation">
             <ul>
                 <li><a href="index.php"><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
-                <div class="navbar">
-                    <div class="dropdown">
-                        <button class="dropbtn">Products<i class="fa fa-caret-down"></i></button>
-                        <div class="dropdown-content">
-                            <a href="products.php">View All Products</a>
-                            <a href="add_product.php">Add New Product</a>
-                            <a href="edit_product.php">Edit Product</a>
-                            <a href="delete_product.php">Delete Product</a>
-                        </div>
-                    </div>
+                <li><a href="products.php"><i class="fa-solid fa-box"></i> Products</a></li>
                 <li><a href="orders.php"><i class="fa-solid fa-cart-shopping"></i> Orders</a></li>
                 <li><a href="customers.php"><i class="fa-solid fa-users"></i> Customers</a></li>
                 <li><a href="sales.php"><i class="fa-solid fa-chart-line"></i> Sales</a></li>
