@@ -39,15 +39,19 @@
                 case 'add_product':
                     include "includes/add_product.php";
                     break;
+
                     case '100':
                         echo "great";
                         break;
+
                 case 'edit_product':
                     include "includes/edit_product.php";
                     break;
+
                 case 'delete_product':
                     include "includes/delete_product.php";
                     break;
+                    
                 default:
                     include "includes/view_all_products.php";
                     break;
