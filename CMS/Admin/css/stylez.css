@@ -66,7 +66,6 @@ body{
     height: auto;
     width: 95%;
     margin: 1rem auto;
-    overflow: hidden;
   
     ul{
       border: 1px solid rgba(255,255,255,0.18);
@@ -83,18 +82,21 @@ body{
     }
   
     li{
-      display: inline;
+      display: inline-block;
       list-style-type: none; 
       padding: 1rem;
       margin: 1rem;
       text-align: center;
+      text-decoration: none;
+      width: auto;
     }
   
     li a{
       color: #000;
       font-size: 1.7rem;
       font-weight: bold;
-      text-decoration: none !important;
+      text-decoration: none;
+      width: auto;
     }  
     
     li a:hover{
@@ -104,11 +106,55 @@ body{
     .active{
       color: #00e6e4;
       text-shadow: 0 0 10px #00e6e4, 0 0 20px #00e6e4;
-      border-bottom: 2px solid #00e6e4;
       cursor: pointer;
     }
 
-    
+    .dropdown{
+      position: relative;
+      display: inline-block;
+      margin-left: 1rem;
+      text-decoration: none;
+    }
+
+    .dropdown-content{
+      display: none;
+      position: absolute;
+      background-color: #97385c;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      font-size: 1.2rem;
+      text-decoration: none;
+      z-index: 1;
+    }
+
+    .dropdown-content a{
+      color: #000;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-size: 1.5rem;
+      font-weight: bold;
+      font-family: "sans-serif";
+    }
+
+    .dropdown-content a:hover{
+      color: #00e6e4;
+      text-shadow: 0 0 10px #00e6e4, 0 0 20px #00e6e4;
+      cursor: pointer;
+      width: auto;
+      padding: 1rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      font-family: "sans-serif";
+      text-align: center;
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+
 }  
 
 
