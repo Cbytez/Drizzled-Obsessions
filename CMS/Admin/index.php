@@ -16,6 +16,7 @@
             <h2 class="admin_content_header">Welcome <?php echo $_SESSION['username']; ?> to the admin panel</h2>            
         </div>
 
+        
         <div class="admin_navigation">
             <ul>
                 <li><a href="index.php" class="active"><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
@@ -25,7 +26,9 @@
                 <li><a href="sales.php"><i class="fa-solid fa-chart-line"></i> Sales</a></li>
                 <li><a href="../logout.php"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
                 
-            </ul>
+            </ul>           
+
+            
         </div> 
         
         <div class="admin_notifications">
