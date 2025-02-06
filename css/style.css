@@ -727,7 +727,16 @@ hr{
   padding: 1rem;
   background-image: linear-gradient(to right bottom, #000000, #2f171e, #592437, #863151, #b73e6c, #ba3f6e, #be4171, #c14273, #97385c, #702d46, #4b2230, #28161c);
   margin: 1rem auto;
-  width: 75%;
+  width: 95%;
+}
+
+hr.hr1{
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 20px;
+  padding: 1rem;
+  background-image: linear-gradient(to right bottom, #000000, #2f171e, #592437, #863151, #b73e6c, #ba3f6e, #be4171, #c14273, #97385c, #702d46, #4b2230, #28161c);
+  margin: 1rem auto;
+  width: 95%;
 }
 
 #img:hover{
@@ -751,7 +760,7 @@ main{
 
 .navigation{
   height: auto;
-  width: 80%;
+  width: 95%;
   margin: 1rem auto;
 
   ul{
