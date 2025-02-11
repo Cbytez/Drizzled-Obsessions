@@ -68,19 +68,14 @@
                 mysqli_stmt_store_result($stmt520);
                 mysqli_stmt_bind_result($stmt520, $p_id, $p_name, $p_catagory, $p_description, $p_price);
                 while(mysqli_stmt_fetch($stmt520)):
-                    echo "<tr>";
+                    echo '<tr>';
                     ?>
-                    <td><input class="checkboxes" type="checkbox" name="checkBoxArray[]" value="<?php echo $p_id; ?>"></td>
+                    <td><input class='checkboxes' type='checkbox' name='checkBoxArray[]' value='<?php echo $p_id; ?>'></td>
                     <td><?php echo $p_name; ?></td>
                     <td><?php echo $p_catagory; ?></td>
                     <td><?php echo $p_description; ?></td>
                     <td><?php echo $p_price; ?></td>
-                    <td><?php echo $p_image; ?></td>
-                    <td><?php echo $p_status; ?></td>
-                    <td>
-                        <a href="pastries.php?source=edit_pastry&p_id=<?php echo $p_id; ?>" class="btn btn-info">Edit</a>
-                        <a href="pastries.php?source=delete_pastry&p_id=<?php echo $p_id; ?>" class="btn btn-danger">Delete</a>
-                    </td>
+                    <!--  -->
                     </tr>
             <?php
                 endwhile;
