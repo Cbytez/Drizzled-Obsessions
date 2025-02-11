@@ -76,7 +76,7 @@
                     <td><?php echo $p_description; ?></td>
                     <td><?php echo $p_price; ?></td>
                     <!--  -->
-                    </tr>
+                    echo '</tr>';
             <?php
                 endwhile;
             ?>
