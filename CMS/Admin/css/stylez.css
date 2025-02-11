@@ -194,6 +194,72 @@ body{
   }
 
  
+  form{
+    width: 95%;
+    margin: 0 auto;
+    text-align: center;
+  } 
+
+  .table{
+    width: 95%;
+    margin: 0 auto;
+    text-align: center;
+  } 
+
+  .table th{
+    text-align: center;
+  } 
+
+  .table td{
+    text-align: center;
+  }  
+
+  .table tr{
+    text-align: center;
+  }  
+
+  .table tbody{
+    text-align: center;
+  }   
+
+  .table thead{
+    text-align: center;
+  }   
+
+  .table tfoot{
+    text-align: center;
+  }    
+
+  .table caption{
+    text-align: center;
+  } 
+
+  .table form{
+    text-align: center;
+  }   
+
+  .table form input{
+    text-align: center;
+  }   
+
+  .table form select{
+    text-align: center;
+  }   
+
+  .table form button{
+    text-align: center;
+  }   
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   

@@ -55,9 +55,9 @@
                 <th>Pastry Catagory</th>
                 <th>Pastry Description</th>
                 <th>Pastry Price</th>
-                <th>Pastry Image</th>
+                <!-- <th>Pastry Image</th>
                 <th>Pastry Status</th>
-                <th>Actions</th>
+                <th>Actions</th> -->
             </tr>
         </thead>
         <tbody>
