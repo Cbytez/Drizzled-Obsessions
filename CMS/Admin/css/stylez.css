@@ -197,22 +197,59 @@ body{
     display: inline-block;
     justify-content: space-around;
     margin: 1rem auto;
+    padding: 0 1rem;
     text-align: left;
     height: auto;
     width: auto;
   }
 
-  .btn btn-primary btn-success btn-danger{
+  .button-primary button-success button-danger{
+    background-color: #000;
+    border: 2px solid rgba(255,255,255,0.18);
+    border-radius: 20px;
     font-size: 2rem;
     font-weight: bold;
-    color: #00e6e4;
+    color: #000;
     font-family: "sans-serif";
-    width: auto;
+    width: 10rem;
     margin: 1rem auto;
     padding: 1rem;
   }
 
-  .btn btn-primary btn-success btn-danger:hover {
+  .bulkOptions{
+    background-color: #000;
+    border: 2px solid rgba(255,255,255,0.18);
+    box-shadow: 0 0 10px rgba(255,255,255,0.18);
+    border-radius: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #00e6e4;
+    font-family: "sans-serif";
+    width: 12rem;
+    margin: 1rem auto;
+    padding: 1rem;
+  }
+
+  .bulkOptions option{
+    background-color: #000;
+    color: #00e6e4;
+    font-family: "sans-serif";
+    font-size: 1.5rem;
+    font-weight: bolder;
+  }
+
+  .bulkOptions:hover{
+    color: #00e6e4;
+    text-shadow: 0 0 10px #00e4e4, 0 0 20px #00e4e4;
+    cursor: pointer;
+    width: auto;
+  }
+
+  .button-primary button-success button-danger:hover {
+    background-color: #000;
+    border: 2px solid rgba(255,255,255,0.18);
+    box-shadow: 0 0 10px rgba(255,255,255,0.18);
+    border-radius: 20px;
     color: #00e6e4;
     text-shadow: 0 0 10px #00e6e4, 0 0 20px #00e6e4;
     cursor: pointer;
@@ -250,7 +287,11 @@ body{
     width: 100%;
   }
   
-  
+  .checkboxes{
+    width: 1rem;
+    margin: 1rem auto;
+    padding: 1rem;
+  }
  
   form{
     width: 98%;
@@ -261,6 +302,12 @@ body{
     color: #00e6e4;
     font-family: "sans-serif";
   } 
+
+  form input{
+    width: 5rem;
+    margin: 1rem auto;
+    padding: 1rem;
+  }
 
   .table{
     width: 95%;
