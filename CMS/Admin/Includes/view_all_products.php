@@ -42,13 +42,11 @@
                 <option value="published">Published</option>
                 <option value="draft">Draft</option>
                 <option value="delete">Delete</option>
-            </select>
-        </div>
-        <br>
-        <div class="clear"></div>
-        <div class="col-xs-4">
-            <input type="submit" name="submit" class="btn btn-success" value="Submit">
-            <a href="pastries.php?source=add_pastry" class="btn btn-primary">Add Pastry</a>
+            </select>        
+            <div class="btn-group">
+                <input type="submit" name="submit" class="btn btn-success" value="Submit">
+                <a href="pastries.php?source=add_pastry" class="btn btn-primary">Add Pastry</a>
+            </div>
         </div>
         <thead>
             <tr class="table-header">
