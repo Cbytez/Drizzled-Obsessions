@@ -1,5 +1,5 @@
 <?php
-
+    
     if(isset($_POST['checkBoxArray'])){
         foreach($_POST['checkBoxArray'] as $checkBoxValue){
             $bulk_options = escape($_POST['bulk_options']);
@@ -44,6 +44,8 @@
                 <option value="delete">Delete</option>
             </select>
         </div>
+        <br>
+        <div class="clear"></div>
         <div class="col-xs-4">
             <input type="submit" name="submit" class="btn btn-success" value="Submit">
             <a href="pastries.php?source=add_pastry" class="btn btn-primary">Add Pastry</a>
@@ -55,33 +57,32 @@
                 <th>Pastry Catagory</th>
                 <th>Pastry Description</th>
                 <th>Pastry Price</th>
-                <!-- <th>Pastry Image</th>
-                <th>Pastry Status</th>
-                <th>Actions</th> -->
             </tr>
         </thead>
         <tbody>
 
             <?php
-                $stmt520 = mysqli_prepare($db, "SELECT p_id, p_name, p_catagory, p_description, p_price FROM pastries");
-                mysqli_stmt_execute($stmt520);
-                mysqli_stmt_store_result($stmt520);
-                mysqli_stmt_bind_result($stmt520, $p_id, $p_name, $p_catagory, $p_description, $p_price);
-                while(mysqli_stmt_fetch($stmt520)):
-                    echo '<tr>';
+                mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+                $mysqli = new mysqli($db['db_host'], $db['db_user'], $db['db_pass'], $db['db_name']);
+
+                $stmt = $mysqli->prepare("SELECT p_id, p_name, p_catagory, p_description, p_price FROM pastries");
+                $stmt->execute();
+                $stmt->store_result();
+                $stmt->bind_result($p_id, $p_name, $p_catagory, $p_description, $p_price);
+                while($stmt->fetch()):
+                    echo "<tr>";
                     ?>
                     <td><input class='checkboxes' type='checkbox' name='checkBoxArray[]' value='<?php echo $p_id; ?>'></td>
-                    <td><?php echo $p_name; ?></td>
-                    <td><?php echo $p_catagory; ?></td>
-                    <td><?php echo $p_description; ?></td>
-                    <td><?php echo $p_price; ?></td>
-                    <!--  -->
-                    echo '</tr>';
-            <?php
+                    <?php
+                    echo "<td>{$p_id}</td>";    
+                    echo "<td>{$p_name}</td>";
+                    echo "<td>{$p_catagory}</td>";
+                    echo "<td>{$p_description}</td>";
+                    echo "<td>{$p_price}</td>";
+                    echo "</tr>";
                 endwhile;
             ?>
-                    
-            
+        </tbody>       
             
     </table>
 </form>
