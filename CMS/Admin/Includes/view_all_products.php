@@ -51,8 +51,9 @@
             <a href="pastries.php?source=add_pastry" class="btn btn-primary">Add Pastry</a>
         </div>
         <thead>
-            <tr>
+            <tr class="table-header">
                 <th><input id="selectAllBoxes" type="checkbox"></th>
+                <th>Pastry ID</th>
                 <th>Pastry Name</th>
                 <th>Pastry Catagory</th>
                 <th>Pastry Description</th>

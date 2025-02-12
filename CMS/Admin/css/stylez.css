@@ -229,6 +229,8 @@ body{
 
   .col-xs-4{
     border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 20px;
+    padding: 1rem;
     font-size: 1.5rem;
     font-weight: bold;
     color: #00e6e4;
@@ -300,7 +302,15 @@ body{
 
   .table tbody{
     text-align: center;
-  }   
+  }
+  
+  .table-header{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #00e6e4;
+    font-family: "sans-serif";
+    text-align: center;
+  }
 
   .table thead{
     text-align: center;
