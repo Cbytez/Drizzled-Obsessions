@@ -57,6 +57,9 @@
                 <th>Pastry Catagory</th>
                 <th>Pastry Description</th>
                 <th>Pastry Price</th>
+                <th>Pastry Image</th>
+                <th>Pastry Status</th>
+                <th>Pastry Listing</th>
             </tr>
         </thead>
         <tbody>
@@ -65,10 +68,10 @@
                 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
                 $mysqli = new mysqli($db['db_host'], $db['db_user'], $db['db_pass'], $db['db_name']);
 
-                $stmt = $mysqli->prepare("SELECT p_id, p_name, p_catagory, p_description, p_price FROM pastries");
+                $stmt = $mysqli->prepare("SELECT p_id, p_name, p_catagory, p_description, p_price, p_image, p_status, p_listing FROM pastries");
                 $stmt->execute();
                 $stmt->store_result();
-                $stmt->bind_result($p_id, $p_name, $p_catagory, $p_description, $p_price);
+                $stmt->bind_result($p_id, $p_name, $p_catagory, $p_description, $p_price, $p_image, $p_status, $p_listing);
                 while($stmt->fetch()):
                     echo "<tr>";
                     ?>
@@ -79,6 +82,9 @@
                     echo "<td>{$p_catagory}</td>";
                     echo "<td>{$p_description}</td>";
                     echo "<td>{$p_price}</td>";
+                    echo "<td><img src='../images/{$p_image}' alt='{$p_name}' width='100' height='100'></td>";
+                    echo "<td>{$p_status}</td>";
+                    echo "<td>{$p_listing}</td>";
                     echo "</tr>";
                 endwhile;
             ?>

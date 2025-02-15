@@ -252,7 +252,7 @@ body{
 .bulkOptions:hover{
   background-color: #97385c;
   color: #000;
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
   font-weight: bolder;
   border: 2px solid #00e6e4;
   box-shadow: 0 0 10px #000;
@@ -340,6 +340,7 @@ form input{
   color: #97385c;
   font-family: "sans-serif";
   text-align: center;
+  text-decoration: underline;
 } 
 
 
