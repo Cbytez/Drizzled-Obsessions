@@ -6,21 +6,21 @@
 
             switch($bulk_options){
                 case 'published':
-                    $stmt45 = mysqli_prepare($db, "UPDATE pastries SET status = ? WHERE id = $checkBoxValue");
+                    $stmt45 = mysqli_prepare($db, "UPDATE pastries SET p_status = ? WHERE p_id = $checkBoxValue");
                     mysqli_stmt_bind_param($stmt45, "s", $bulk_options);
                     mysqli_stmt_execute($stmt45);
                     mysqli_stmt_close($stmt45);
                     break;
 
                 case 'draft':
-                    $stmt46 = mysqli_prepare($db, "UPDATE pastries SET status = ? WHERE id = $checkBoxValue");
+                    $stmt46 = mysqli_prepare($db, "UPDATE pastries SET p_status = ? WHERE p_id = $checkBoxValue");
                     mysqli_stmt_bind_param($stmt46, "s", $bulk_options);
                     mysqli_stmt_execute($stmt46);
                     mysqli_stmt_close($stmt46);
                     break;
 
                 case 'delete':
-                    $stmt47 = mysqli_prepare($db, "DELETE FROM pastries WHERE id = ?");
+                    $stmt47 = mysqli_prepare($db, "DELETE FROM pastries WHERE p_id = ?");
                     mysqli_stmt_bind_param($stmt47, "i", $checkBoxValue);
                     mysqli_stmt_execute($stmt47);
                     mysqli_stmt_close($stmt47);
@@ -46,7 +46,6 @@
             <div class="btn-group">
                 <input type="submit" name="submit" class="button-success" value="Submit">
                 <button type="button" class="button-primary">Add Pastry</button>
-                <!-- <a href="pastries.php?source=add_pastry" class="btn btn-primary">Add Pastry</a> -->
             </div>
         </div>
         <thead>
