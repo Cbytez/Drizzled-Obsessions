@@ -1,3 +1,15 @@
+
+<?php
+
+    if(isset($_POST['create_pastry'])){
+    echo "great";
+    }
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
