@@ -17,7 +17,7 @@
                 <li><a href="index.php"><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
                 <li class="dropdown"><a class="active" href="products.php"><i class="fa-solid fa-box"></i> Products<i class="fa-solid fa-caret-down"></i></a>
                     <div class="dropdown-content">
-                        <a href="add_product">Add Product</a>
+                        <a href="Includes/add_product.php" target="_blank">Add Product</a>
                         <a href="edit_product">Edit Product</a>
                         <a href="delete_product">Delete Product</a>
                     </div>
