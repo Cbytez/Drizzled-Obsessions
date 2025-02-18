@@ -35,7 +35,7 @@
             <form action="" method="post" enctype="multipart/form-data">
                 <div class="form-group1">
                     <label for="p_name">Pastry Name: </label>
-                    <input type="text" name="p_name" id="p_name" class="form-control">
+                    <input type="text" name="p_name" id="p_name" class="form-control" autofocus>
                 </div>
                 <div class="form-group1">
                     <label for="p_catagory">Pastry Catagory: </label>
@@ -65,6 +65,9 @@
                     <input type="submit" name="create_pastry" class="button-success-add" value="Add Product">
                 </div>
             </form> 
+        </div>
+        <div class="footer">
+            <footer><h2> &copy; Drizzled Obsessions.com 2025</h2></footer>
         </div>
     </div>
 </body>

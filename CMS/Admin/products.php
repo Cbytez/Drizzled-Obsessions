@@ -64,6 +64,10 @@
                     break;
             }
         ?>
+
+        <div class="footer">
+            <footer><h2> &copy; Drizzled Obsessions.com 2025</h2></footer>
+        </div>
     </div>
 </body>
 </html>
