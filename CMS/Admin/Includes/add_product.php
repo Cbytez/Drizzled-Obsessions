@@ -23,7 +23,7 @@
             die("Query Failed!" . $mysqli->error);
         }
 
-        $stmt->close();
+        
         $mysqli->close(); 
 
         echo "<script>alert('Product Added Successfully');</script>";
@@ -40,7 +40,7 @@
     <script src="https://kit.fontawesome.com/584507be96.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
+    <title>Add Product</title>
     <link rel="stylesheet" href="../css/stylez.css">
 </head>
 <body>
