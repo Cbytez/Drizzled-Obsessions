@@ -2,7 +2,25 @@
 <?php
 
     if(isset($_POST['create_pastry'])){
-    echo "great";
+        $p_name = escape($_POST['p_name']);
+        $p_catagory = escape($_POST['p_catagory']);
+        $p_description = escape($_POST['p_description']);
+        
+        $p_image = $_FILES['p_image']['name'];
+        $p_image_temp = $_FILES['p_image']['tmp_name'];
+
+        move_uploaded_file($p_image_temp, "../images/pastries/$p_image");
+
+        $p_status = escape($_POST['p_status']);
+        $p_listing = escape($_POST['p_listing']);
+
+        $stmt1919 = $conn->prepare("INSERT INTO pastries(p_name, p_catagory, p_description, p_image, p_status, p_listing) VALUES(?, ?, ?, ?, ?, ?)");
+        $stmt1919->bind_param("ssssss", $p_name, $p_catagory, $p_description, $p_image, $p_status, $p_listing);
+        $stmt1919->execute();
+        $stmt1919->close();
+        $conn->close(); 
+
+        echo "<script>alert('Product Added Successfully');</script>";
     }
 
 

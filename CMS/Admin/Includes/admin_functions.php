@@ -55,6 +55,47 @@ use PHPMailer\PHPMailer\SMTP;
 		}
 	}
 
+	function insert_catagories(){
+		global $db;
+		if(isset($_POST['submit'])){
+			$cat_title = escape($_POST['cat_title']);
+
+			if($cat_title == "" || empty($cat_title)){
+				echo "<p class='bg-danger'>This field should not be empty</p>";
+			}else{
+				$mysqli = new mysqli($db['db_host'], $db['db_user'], $db['db_pass'], $db['db_name']);
+				$stmt1254 = $mysqli->prepare("INSERT INTO catagories (cat_title) VALUES (?)");
+				$stmt1254->bind_param("s", $cat_title);
+				$stmt1254->execute();
+
+				if(!$stmt1254){
+					die("QUERY FAILED" . $mysqli->error);
+				}
+
+				$stmt1254->close();
+				$mysqli->close();
+				echo "<p class='bg-success'>Catagory Added: <strong>" . $cat_title . "</strong></p>";
+			}
+		}
+	}
+
+	function findAllCatagories(){
+		global $db;
+		$mysqli = new mysqli($db['db_host'], $db['db_user'], $db['db_pass'], $db['db_name']);
+		$stmt2234 = $mysqli->prepare("SELECT cat_id, cat_title FROM catagories");
+		$stmt2234->execute();
+		$stmt2234->store_result();
+		$stmt2234->bind_result($cat_id, $cat_title);
+		while($stmt2234->fetch()):
+			echo "<tr>";
+			echo "<td>{$cat_id}</td>";
+			echo "<td>{$cat_title}</td>";
+			echo "</tr>";
+		endwhile;
+		mysqli_stmt_close($stmt2234);
+		$mysqli->close();
+	}
+
     function escape($string){
 		global $db;
 		return mysqli_real_escape_string($db, trim($string));
