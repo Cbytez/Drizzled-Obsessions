@@ -21,6 +21,7 @@
             <ul>
                 <li><a href="index.php" class="active"><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
                 <li><a href="products.php"><i class="fa-solid fa-box"></i> Products</a></li>
+                <li><a href="catagories.php"><i class="fa-solid fa-tags"></i> Catagories</a></li>
                 <li><a href="orders.php"><i class="fa-solid fa-cart-shopping"></i> Orders</a></li>
                 <li><a href="customers.php"><i class="fa-solid fa-users"></i> Customers</a></li>
                 <li><a href="sales.php"><i class="fa-solid fa-chart-line"></i> Sales</a></li>

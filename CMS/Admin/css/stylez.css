@@ -363,6 +363,10 @@ body{
   width: 100%;
 }
 
+.col-xs-12{
+  width: 100%;
+}
+
 .checkboxes{
   width: 1rem;
   margin: 1rem auto;
@@ -449,6 +453,16 @@ footer{
   color: #00e6e4;
   font-family: "sans-serif";
 }
+
+h2{
+  font-size: 2rem;
+  font-weight: bold;
+  color: #00e6e4;
+  font-family: "sans-serif";
+  margin: 1rem auto 1rem 2rem;
+  padding: 1rem;
+}
+
 .table{
   width: 95%;
   margin: 0 auto;

@@ -85,7 +85,9 @@
                     echo "<td>{$p_status}</td>";
                     echo "<td>{$p_listing}</td>";
                     echo "</tr>";
-                endwhile;
+                endwhile;               
+                $stmt->close();
+                $mysqli->close();
             ?>
         </tbody>       
             

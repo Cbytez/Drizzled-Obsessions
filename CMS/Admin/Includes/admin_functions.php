@@ -70,11 +70,11 @@ use PHPMailer\PHPMailer\SMTP;
 
 				if(!$stmt1254){
 					die("QUERY FAILED" . $mysqli->error);
-				}
+				}				
+				
+				echo "<p class='bg-success'>Catagory Added: <strong>" . $cat_title . "</strong></p>";
 
 				$stmt1254->close();
-				$mysqli->close();
-				echo "<p class='bg-success'>Catagory Added: <strong>" . $cat_title . "</strong></p>";
 			}
 		}
 	}
@@ -90,10 +90,26 @@ use PHPMailer\PHPMailer\SMTP;
 			echo "<tr>";
 			echo "<td>{$cat_id}</td>";
 			echo "<td>{$cat_title}</td>";
+			echo "<td><a class='btn gtn-danger' onclick= \"javascript: return confirm('Are you sure you want to delete?');\" href='catagories.php?delete={$cat_id}'>Delete</a></td>";
+			echo "<td><a class='btn btn-primary' href='catagories.php?edit={$cat_id}'>Edit</a></td>";
 			echo "</tr>";
 		endwhile;
 		mysqli_stmt_close($stmt2234);
 		$mysqli->close();
+	}
+
+	function deleteQuery(){
+		global $db;
+		if(isset($_GET['delete'])){
+			$cat_id = $_GET['delete'];
+			$mysqli = new mysqli($db['db_host'], $db['db_user'], $db['db_pass'], $db['db_name']);
+			$stmt5654 = $mysqli->prepare("DELETE FROM catagories WHERE cat_id = ?");
+			$stmt5654->bind_param("i", $cat_id);
+			$stmt5654->execute();
+			$stmt5654->close();
+			$mysqli->close();
+			echo "<p class='bg-success'>Catagory Deleted: <strong>" . $cat_id . "</strong></p>";
+		}
 	}
 
     function escape($string){

@@ -14,11 +14,17 @@
         $p_status = escape($_POST['p_status']);
         $p_listing = escape($_POST['p_listing']);
 
-        $stmt1919 = $conn->prepare("INSERT INTO pastries(p_name, p_catagory, p_description, p_image, p_status, p_listing) VALUES(?, ?, ?, ?, ?, ?)");
-        $stmt1919->bind_param("ssssss", $p_name, $p_catagory, $p_description, $p_image, $p_status, $p_listing);
-        $stmt1919->execute();
-        $stmt1919->close();
-        $conn->close(); 
+        $mysqli = new mysqli($db['db_host'], $db['db_user'], $db['db_pass'], $db['db_name']);
+        $stmt = $mysqli->prepare("INSERT INTO pastries(p_name, p_catagory, p_description, p_image, p_status, p_listing) VALUES(?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssssss", $p_name, $p_catagory, $p_description, $p_image, $p_status, $p_listing);
+        $stmt->execute();
+
+        if(!$stmt){
+            die("Query Failed!" . $mysqli->error);
+        }
+
+        $stmt->close();
+        $mysqli->close(); 
 
         echo "<script>alert('Product Added Successfully');</script>";
     }
@@ -54,6 +60,12 @@
                 </li>
 
                 <li><a href="orders.php"><i class="fa-solid fa-cart-shopping"></i> Orders</a></li>
+                <li class="dropdown"><a href="catagories.php"><i class="fa-solid fa-tags"></i> Catagories<i class="fa-solid fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="catagories.php">View All Catagories</a>
+                        <a href="catagories.php?add">Add New Catagory</a>
+                    </div>
+                </li>
                 <li><a href="customers.php"><i class="fa-solid fa-users"></i> Customers</a></li>
                 <li><a href="sales.php"><i class="fa-solid fa-chart-line"></i> Sales</a></li>
                 <li><a href="../logout.php"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>

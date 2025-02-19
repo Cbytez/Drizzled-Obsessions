@@ -24,6 +24,7 @@
                 </li>
 
                 <li><a href="orders.php"><i class="fa-solid fa-cart-shopping"></i> Orders</a></li>
+                <li><a href="catagories.php"><i class="fa-solid fa-tags"></i> Catagories</a></li>
                 <li><a href="customers.php"><i class="fa-solid fa-users"></i> Customers</a></li>
                 <li><a href="sales.php"><i class="fa-solid fa-chart-line"></i> Sales</a></li>
                 <li><a href="../logout.php"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
