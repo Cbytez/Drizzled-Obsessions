@@ -45,7 +45,7 @@
             </select>        
             <div class="btn-group">
                 <input type="submit" name="submit" class="button-success" value="Submit">
-                <button type="button" class="button-primary" name="add_product">Add Pastry</button>
+                <button type="button" class="button-primary" name="add_product" onclick="window.location.href='includes/add_product.php'">Add Pastry</button>
             </div>
         </div>
         <thead>

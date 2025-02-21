@@ -2,42 +2,34 @@
 
 <?php
    
-    require_once "db.php";
-    $db = new mysqli($db['db_host'], $db['db_user'], $db['db_pass'], $db['db_name']);
+    
 
-    if(isset($_POST['create_pastry'])){  
-        echo "test";
-        
+    if(isset($_POST['create_pastry'])){ 
+        $mysqli = new mysqli("localhost", "fatality", "Yennefer0974", "Drizzled_Obsessions");
+
+        $stmt = $mysqli->prepare("INSERT INTO pastries(p_name, p_catagory, p_description, p_price, p_image, p_status, p_listing) VALUES (?, ?, ?, ?, ?, ?, ?)");
+
         $p_name = $_POST['p_name'];
         $p_catagory = $_POST['p_catagory'];
         $p_description = $_POST['p_description'];
-        
+        $p_price = $_POST['p_price'];
         $p_image = $_FILES['p_image']['name'];
         $p_image_temp = $_FILES['p_image']['tmp_name'];
-
-
         $p_status = $_POST['p_status'];
         $p_listing = $_POST['p_listing'];
-        echo "test2";
 
         move_uploaded_file($p_image_temp, "../images/$p_image");
-        echo "test3";
-        
-        
-        // $mysqli = new mysqli($db['db_host'], $db['db_user'], $db['db_pass'], $db['db_name']);
-        echo "test4";
-        $db = $mysqli->prepare("INSERT INTO pastries(p_name, p_catagory, p_description, p_image, p_status, p_listing) VALUES (?, ?, ?, ?, ?, ?)");
-        
-        $db->bind_param("issss", $p_name, $p_catagory, $p_description, $p_image, $p_status, $p_listing);
-        $db->execute();
-        echo "test5";
-        if(!$db){
-            die("Query Failed!" . $db->error);
+
+        $stmt->bind_param("sssssss", $p_name, $p_catagory, $p_description, $p_price, $p_image, $p_status, $p_listing);
+        $stmt->execute();
+
+        if(!$stmt){
+            die("Query Failed: " . $mysqli->error);
+        }else{
+            header("Location: ../products.php");
         }
-        echo "test6";
-        echo "<p class='bg-success'>Product Created!: " . $p_name . "</p>";
-        echo "test7";
-        
+        $stmt->close();
+        $mysqli->close();
     }
 
 

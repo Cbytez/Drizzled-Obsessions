@@ -3,7 +3,21 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 ?>
+
 <?php
+
+	$db = new mysqli($db['db_host'], $db['db_user'], $db['db_pass'], $db['db_name']);
+
+?>
+
+<?php
+
+	function function_alert($message) {
+
+		// Display the alert box
+		echo "<script>alert('$message');</script>";
+	}
+
     //for password redirect system
 	function ifItIsMethod($method=NULL){
 		if ($_SERVER['REQUEST_METHOD'] == strtoupper($method)) {
@@ -56,27 +70,66 @@ use PHPMailer\PHPMailer\SMTP;
 	}
 
 	function insert_catagories(){
-		global $db;
-		if(isset($_POST['submit'])){
-			$cat_title = escape($_POST['cat_title']);
 
-			if($cat_title == "" || empty($cat_title)){
+		global $db;
+		echo "test";
+		echo "<br>";
+
+		// $db = new mysqli($db['db_host'], $db['db_user'], $db['db_pass'], $db['db_name']);
+
+		echo "test2";
+		echo "<br>";
+
+		if($db->connect_error){
+			die("Connection failed: " . $db->connect_error);
+		}	
+
+		echo "test3";
+		echo "<br>";
+
+		if(isset($_POST['submit'])){
+			echo "test4";
+			echo "<br>";
+
+			if(empty($_POST['cat_title'])){
 				echo "<p class='bg-danger'>This field should not be empty</p>";
 			}else{
-				$mysqli = new mysqli($db['db_host'], $db['db_user'], $db['db_pass'], $db['db_name']);
-				$stmt1254 = $mysqli->prepare("INSERT INTO catagories (cat_title) VALUES (?)");
-				$stmt1254->bind_param("s", $cat_title);
-				$stmt1254->execute();
+				$stmt = $db->prepare("INSERT INTO catagories (cat_title) VALUES (?)");
+				$cat_title = $_POST['cat_title'];
+				$stmt->bind_param("s", $cat_title);
+				$stmt->execute();
 
-				if(!$stmt1254){
-					die("QUERY FAILED" . $mysqli->error);
-				}				
-				
-				echo "<p class='bg-success'>Catagory Added: <strong>" . $cat_title . "</strong></p>";
-
-				$stmt1254->close();
+				if($stmt->affected_rows > 0){
+					echo "<p class='bg-success'>Catagory Added: <strong>" . $cat_title . "</strong></p>";
+				}else{
+					echo "<p class='bg-danger'>Error adding catagory</p>";
+				}
+				$stmt->close();
 			}
+
 		}
+
+		// global $db;
+		// if(isset($_POST['submit'])){
+		// 	$cat_title = escape($_POST['cat_title']);
+
+		// 	if($cat_title == "" || empty($cat_title)){
+		// 		echo "<p class='bg-danger'>This field should not be empty</p>";
+		// 	}else{
+		// 		$mysqli = new mysqli($db['db_host'], $db['db_user'], $db['db_pass'], $db['db_name']);
+		// 		$stmt1254 = $mysqli->prepare("INSERT INTO catagories (cat_title) VALUES (?)");
+		// 		$stmt1254->bind_param("s", $cat_title);
+		// 		$stmt1254->execute();
+
+		// 		if(!$stmt1254){
+		// 			die("QUERY FAILED" . $mysqli->error);
+		// 		}				
+				
+		// 		echo "<p class='bg-success'>Catagory Added: <strong>" . $cat_title . "</strong></p>";
+
+		// 		$stmt1254->close();
+		// 	}
+		// }
 	}
 
 	function findAllCatagories(){

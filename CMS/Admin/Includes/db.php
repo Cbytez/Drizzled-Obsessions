@@ -12,7 +12,7 @@ ob_start();
 	$db['db_name'] = "Drizzled_Obsessions";
 
 	foreach ($db as $key => $value) {
-		define(strtoupper($key), $value);
+		define(strtoupper($key), ($value));
 	}
 
 	// $db = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
