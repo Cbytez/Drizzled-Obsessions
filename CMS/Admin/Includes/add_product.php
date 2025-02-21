@@ -21,13 +21,13 @@
         echo "test3";
         
         
-        $mysqli = new mysqli($db['db_host'], $db['db_user'], $db['db_pass'], $db['db_name']);
-        echo "test4";
-        $stmt = $mysqli->prepare("INSERT INTO pastries(p_name, p_catagory, p_description, p_image, p_status, p_listing) VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param($stmt, "issss", $p_name, $p_catagory, $p_description, $p_image, $p_status, $p_listing);
-        $stmt->execute();
+        // $mysqli = new mysqli($db['db_host'], $db['db_user'], $db['db_pass'], $db['db_name']);
+        
+        $db = $mysqli->prepare("INSERT INTO pastries(p_name, p_catagory, p_description, p_image, p_status, p_listing) VALUES (?, ?, ?, ?, ?, ?)");
+        $db->bind_param($db, "issss", $p_name, $p_catagory, $p_description, $p_image, $p_status, $p_listing);
+        $db->execute();
         echo "test5";
-        if(!$stmt){
+        if(!$db){
             die("Query Failed!" . $mysqli->error);
         }
         echo "test6";
