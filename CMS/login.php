@@ -4,7 +4,7 @@
 <?php
 
     if(isset($_POST['submit'])){
-        userLoginCheckAndRedirect('/CMS/Admin/index.php');
+        userLoginCheckAndRedirect('index.php');
         
         if (ifItIsMethod('post')) {
             if (isset($_POST['username']) && isset($_POST['user_password'])) {

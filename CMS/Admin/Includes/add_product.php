@@ -1,32 +1,39 @@
 
-<?php
 
-    if(isset($_POST['create_pastry'])){
-        $p_name = escape($_POST['p_name']);
-        $p_catagory = escape($_POST['p_catagory']);
-        $p_description = escape($_POST['p_description']);
+<?php
+    
+    if(isset($_POST['create_pastry'])){  
+        echo "test";
+        
+        $p_name = $_POST['p_name'];
+        $p_catagory = $_POST['p_catagory'];
+        $p_description = $_POST['p_description'];
         
         $p_image = $_FILES['p_image']['name'];
         $p_image_temp = $_FILES['p_image']['tmp_name'];
 
-        move_uploaded_file($p_image_temp, "../images/pastries/$p_image");
 
-        $p_status = escape($_POST['p_status']);
-        $p_listing = escape($_POST['p_listing']);
+        $p_status = $_POST['p_status'];
+        $p_listing = $_POST['p_listing'];
+        echo "test2";
 
+        move_uploaded_file($p_image_temp, "../images/$p_image");
+        echo "test3";
+        
+        
         $mysqli = new mysqli($db['db_host'], $db['db_user'], $db['db_pass'], $db['db_name']);
-        $stmt = $mysqli->prepare("INSERT INTO pastries(p_name, p_catagory, p_description, p_image, p_status, p_listing) VALUES(?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssssss", $p_name, $p_catagory, $p_description, $p_image, $p_status, $p_listing);
+        echo "test4";
+        $stmt = $mysqli->prepare("INSERT INTO pastries(p_name, p_catagory, p_description, p_image, p_status, p_listing) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param($stmt, "issss", $p_name, $p_catagory, $p_description, $p_image, $p_status, $p_listing);
         $stmt->execute();
-
+        echo "test5";
         if(!$stmt){
             die("Query Failed!" . $mysqli->error);
         }
-
+        echo "test6";
+        echo "<script>window.location.href = 'products.php';</script>";
+        echo "test7";
         
-        $mysqli->close(); 
-
-        echo "<script>alert('Product Added Successfully');</script>";
     }
 
 
