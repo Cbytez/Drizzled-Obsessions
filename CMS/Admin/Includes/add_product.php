@@ -13,12 +13,9 @@
         $p_catagory = $_POST['p_catagory'];
         $p_description = $_POST['p_description'];
         $p_price = $_POST['p_price'];
-        $p_image = $_FILES['p_image']['name'];
-        $p_image_temp = $_FILES['p_image']['tmp_name'];
+        $p_image = $_POST['p_image'];
         $p_status = $_POST['p_status'];
         $p_listing = $_POST['p_listing'];
-
-        move_uploaded_file($p_image_temp, "../images/$p_image");
 
         $stmt->bind_param("sssssss", $p_name, $p_catagory, $p_description, $p_price, $p_image, $p_status, $p_listing);
         $stmt->execute();

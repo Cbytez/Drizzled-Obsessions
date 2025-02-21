@@ -72,24 +72,13 @@ use PHPMailer\PHPMailer\SMTP;
 	function insert_catagories(){
 
 		global $db;
-		echo "test";
-		echo "<br>";
-
-		// $db = new mysqli($db['db_host'], $db['db_user'], $db['db_pass'], $db['db_name']);
-
-		echo "test2";
-		echo "<br>";
+		
 
 		if($db->connect_error){
 			die("Connection failed: " . $db->connect_error);
-		}	
-
-		echo "test3";
-		echo "<br>";
+		}		
 
 		if(isset($_POST['submit'])){
-			echo "test4";
-			echo "<br>";
 
 			if(empty($_POST['cat_title'])){
 				echo "<p class='bg-danger'>This field should not be empty</p>";
@@ -105,50 +94,28 @@ use PHPMailer\PHPMailer\SMTP;
 					echo "<p class='bg-danger'>Error adding catagory</p>";
 				}
 				$stmt->close();
+				$db->close();
 			}
 
 		}
-
-		// global $db;
-		// if(isset($_POST['submit'])){
-		// 	$cat_title = escape($_POST['cat_title']);
-
-		// 	if($cat_title == "" || empty($cat_title)){
-		// 		echo "<p class='bg-danger'>This field should not be empty</p>";
-		// 	}else{
-		// 		$mysqli = new mysqli($db['db_host'], $db['db_user'], $db['db_pass'], $db['db_name']);
-		// 		$stmt1254 = $mysqli->prepare("INSERT INTO catagories (cat_title) VALUES (?)");
-		// 		$stmt1254->bind_param("s", $cat_title);
-		// 		$stmt1254->execute();
-
-		// 		if(!$stmt1254){
-		// 			die("QUERY FAILED" . $mysqli->error);
-		// 		}				
-				
-		// 		echo "<p class='bg-success'>Catagory Added: <strong>" . $cat_title . "</strong></p>";
-
-		// 		$stmt1254->close();
-		// 	}
-		// }
 	}
 
 	function findAllCatagories(){
 		global $db;
-		$mysqli = new mysqli($db['db_host'], $db['db_user'], $db['db_pass'], $db['db_name']);
-		$stmt2234 = $mysqli->prepare("SELECT cat_id, cat_title FROM catagories");
-		$stmt2234->execute();
-		$stmt2234->store_result();
-		$stmt2234->bind_result($cat_id, $cat_title);
-		while($stmt2234->fetch()):
-			echo "<tr>";
-			echo "<td>{$cat_id}</td>";
-			echo "<td>{$cat_title}</td>";
-			echo "<td><a class='btn gtn-danger' onclick= \"javascript: return confirm('Are you sure you want to delete?');\" href='catagories.php?delete={$cat_id}'>Delete</a></td>";
-			echo "<td><a class='btn btn-primary' href='catagories.php?edit={$cat_id}'>Edit</a></td>";
-			echo "</tr>";
-		endwhile;
-		mysqli_stmt_close($stmt2234);
-		$mysqli->close();
+		// $stmt2234 = $db->prepare("SELECT cat_id, cat_title FROM catagories");
+		// $stmt2234->execute();
+		// $stmt2234->store_result();
+		// $stmt2234->bind_result($cat_id, $cat_title);
+		// while($stmt2234->fetch()):
+		// 	echo "<tr>";
+		// 	echo "<td>{$cat_id}</td>";
+		// 	echo "<td>{$cat_title}</td>";
+		// 	echo "<td><a class='btn gtn-danger' onclick= \"javascript: return confirm('Are you sure you want to delete?');\" href='catagories.php?delete={$cat_id}'>Delete</a></td>";
+		// 	echo "<td><a class='btn btn-primary' href='catagories.php?edit={$cat_id}'>Edit</a></td>";
+		// 	echo "</tr>";
+		// endwhile;
+		// mysqli_stmt_close($stmt2234);
+		// $db->close();
 	}
 
 	function deleteQuery(){
