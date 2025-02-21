@@ -1,7 +1,10 @@
 
 
 <?php
-    
+   
+    require_once "db.php";
+    $db = new mysqli($db['db_host'], $db['db_user'], $db['db_pass'], $db['db_name']);
+
     if(isset($_POST['create_pastry'])){  
         echo "test";
         
@@ -22,16 +25,17 @@
         
         
         // $mysqli = new mysqli($db['db_host'], $db['db_user'], $db['db_pass'], $db['db_name']);
-        
+        echo "test4";
         $db = $mysqli->prepare("INSERT INTO pastries(p_name, p_catagory, p_description, p_image, p_status, p_listing) VALUES (?, ?, ?, ?, ?, ?)");
-        $db->bind_param($db, "issss", $p_name, $p_catagory, $p_description, $p_image, $p_status, $p_listing);
+        
+        $db->bind_param("issss", $p_name, $p_catagory, $p_description, $p_image, $p_status, $p_listing);
         $db->execute();
         echo "test5";
         if(!$db){
-            die("Query Failed!" . $mysqli->error);
+            die("Query Failed!" . $db->error);
         }
         echo "test6";
-        echo "<script>window.location.href = 'products.php';</script>";
+        echo "<p class='bg-success'>Product Created!: " . $p_name . "</p>";
         echo "test7";
         
     }

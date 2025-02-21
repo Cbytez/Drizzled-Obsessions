@@ -65,9 +65,9 @@
 
             <?php
                 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-                $mysqli = new mysqli($db['db_host'], $db['db_user'], $db['db_pass'], $db['db_name']);
+                $db = new mysqli($db['db_host'], $db['db_user'], $db['db_pass'], $db['db_name']);
 
-                $stmt = $mysqli->prepare("SELECT p_id, p_name, p_catagory, p_description, p_price, p_image, p_status, p_listing FROM pastries");
+                $stmt = $db->prepare("SELECT p_id, p_name, p_catagory, p_description, p_price, p_image, p_status, p_listing FROM pastries");
                 $stmt->execute();
                 $stmt->store_result();
                 $stmt->bind_result($p_id, $p_name, $p_catagory, $p_description, $p_price, $p_image, $p_status, $p_listing);
@@ -87,7 +87,7 @@
                     echo "</tr>";
                 endwhile;               
                 $stmt->close();
-                $mysqli->close();
+                $db->close();
             ?>
         </tbody>       
             
