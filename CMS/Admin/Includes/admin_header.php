@@ -1,5 +1,5 @@
 <?php include "db.php"; ?>
-<?php include "admin_functions.php"; ?>
+
 
 
  <?php

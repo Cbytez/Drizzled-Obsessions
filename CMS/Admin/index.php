@@ -13,7 +13,7 @@
         <h1 class="admin_header">Drizzled Obsessions Admin</h1>
 
         <div class="admin_content_head">
-            <h2 class="admin_content_header">Welcome <?php echo $_SESSION['username']; ?> to the admin panel</h2>            
+            <h2 class="admin_content_header">Welcome to the admin panel</h2>            
         </div>
 
         

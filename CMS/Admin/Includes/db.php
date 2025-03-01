@@ -1,6 +1,6 @@
 <?php 
 
-// echo "Hello World! ";
+echo "Hello World From DB!";
 ob_start();
 	// $db = mysqli_connect('shareddb-z.hosting.stackcp.net', 'CMSAPP-313635097f', '2azoaez7ah', 'CMSAPP-313635097f');
 
@@ -15,13 +15,14 @@ ob_start();
 		define(strtoupper($key), ($value));
 	}
 
-	// $db = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+	$db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
-	// if ($db) {
-	// 	echo "We are connected!";
-	// }else{
-	// 	echo "Not Connected!";
-	// }
+	
+	if ($db) {
+		echo "We are connected!";
+	}else{
+		echo "Not Connected!";
+	}
 
 
  ?>

@@ -6,24 +6,24 @@
 
             switch($bulk_options){
                 case 'published':
-                    $stmt45 = mysqli_prepare($db, "UPDATE pastries SET p_status = ? WHERE p_id = $checkBoxValue");
-                    mysqli_stmt_bind_param($stmt45, "s", $bulk_options);
-                    mysqli_stmt_execute($stmt45);
-                    mysqli_stmt_close($stmt45);
+                    $stmt = mysqli_prepare($db, "UPDATE pastries SET p_status = ? WHERE p_id = $checkBoxValue");
+                    mysqli_stmt_bind_param($stmt, "s", $bulk_options);
+                    mysqli_stmt_execute($stmt);
+                    mysqli_stmt_close($stmt);
                     break;
 
                 case 'draft':
-                    $stmt46 = mysqli_prepare($db, "UPDATE pastries SET p_status = ? WHERE p_id = $checkBoxValue");
-                    mysqli_stmt_bind_param($stmt46, "s", $bulk_options);
-                    mysqli_stmt_execute($stmt46);
-                    mysqli_stmt_close($stmt46);
+                    $stmt = mysqli_prepare($db, "UPDATE pastries SET p_status = ? WHERE p_id = $checkBoxValue");
+                    mysqli_stmt_bind_param($stmt, "s", $bulk_options);
+                    mysqli_stmt_execute($stmt);
+                    mysqli_stmt_close($stmt);
                     break;
 
                 case 'delete':
-                    $stmt47 = mysqli_prepare($db, "DELETE FROM pastries WHERE p_id = ?");
-                    mysqli_stmt_bind_param($stmt47, "i", $checkBoxValue);
-                    mysqli_stmt_execute($stmt47);
-                    mysqli_stmt_close($stmt47);
+                    $stmt = mysqli_prepare($db, "DELETE FROM pastries WHERE p_id = ?");
+                    mysqli_stmt_bind_param($stmt, "i", $checkBoxValue);
+                    mysqli_stmt_execute($stmt);
+                    mysqli_stmt_close($stmt);
                     break;
 
                 default:
@@ -67,10 +67,10 @@
                 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
                 $mysqli = new mysqli($db['db_host'], $db['db_user'], $db['db_pass'], $db['db_name']);
 
-                $stmt = $mysqli->prepare("SELECT p_id, p_name, p_catagory, p_description, p_price, p_image, p_status, p_listing FROM pastries");
+                $stmt = $mysqli->prepare("SELECT p_id, p_name, p_catagory, p_description, p_price, p_status, p_listing FROM pastries");
                 $stmt->execute();
                 $stmt->store_result();
-                $stmt->bind_result($p_id, $p_name, $p_catagory, $p_description, $p_price, $p_image, $p_status, $p_listing);
+                $stmt->bind_result($p_id, $p_name, $p_catagory, $p_description, $p_price, $p_status, $p_listing);
                 while($stmt->fetch()):
                     echo "<tr>";
                     ?>
@@ -81,7 +81,6 @@
                     echo "<td>{$p_catagory}</td>";
                     echo "<td>{$p_description}</td>";
                     echo "<td>{$p_price}</td>";
-                    echo "<td><img src='../images/{$p_image}' alt='{$p_name}' width='100' height='100'></td>";
                     echo "<td>{$p_status}</td>";
                     echo "<td>{$p_listing}</td>";
                     echo "</tr>";

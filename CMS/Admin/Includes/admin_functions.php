@@ -69,68 +69,68 @@ use PHPMailer\PHPMailer\SMTP;
 		}
 	}
 
-	function insert_catagories(){
+	// function insert_catagories(){
 
-		global $db;
+	// 	global $db;
 		
 
-		if($db->connect_error){
-			die("Connection failed: " . $db->connect_error);
-		}		
+	// 	if($db->connect_error){
+	// 		die("Connection failed: " . $db->connect_error);
+	// 	}		
 
-		if(isset($_POST['submit'])){
+	// 	if(isset($_POST['submit'])){
 
-			if(empty($_POST['cat_title'])){
-				echo "<p class='bg-danger'>This field should not be empty</p>";
-			}else{
-				$stmt = $db->prepare("INSERT INTO catagories (cat_title) VALUES (?)");
-				$cat_title = $_POST['cat_title'];
-				$stmt->bind_param("s", $cat_title);
-				$stmt->execute();
+	// 		if(empty($_POST['cat_title'])){
+	// 			echo "<p class='bg-danger'>This field should not be empty</p>";
+	// 		}else{
+	// 			$stmt = $db->prepare("INSERT INTO catagories (cat_title) VALUES (?)");
+	// 			$cat_title = $_POST['cat_title'];
+	// 			$stmt->bind_param("s", $cat_title);
+	// 			$stmt->execute();
 
-				if($stmt->affected_rows > 0){
-					echo "<p class='bg-success'>Catagory Added: <strong>" . $cat_title . "</strong></p>";
-				}else{
-					echo "<p class='bg-danger'>Error adding catagory</p>";
-				}
-				$stmt->close();
-				$db->close();
-			}
+	// 			if($stmt->affected_rows > 0){
+	// 				echo "<p class='bg-success'>Catagory Added: <strong>" . $cat_title . "</strong></p>";
+	// 			}else{
+	// 				echo "<p class='bg-danger'>Error adding catagory</p>";
+	// 			}
+	// 			$stmt->close();
+	// 			$db->close();
+	// 		}
 
-		}
-	}
+	// 	}
+	// }
 
-	function findAllCatagories(){
-		global $db;
-		// $stmt2234 = $db->prepare("SELECT cat_id, cat_title FROM catagories");
-		// $stmt2234->execute();
-		// $stmt2234->store_result();
-		// $stmt2234->bind_result($cat_id, $cat_title);
-		// while($stmt2234->fetch()):
-		// 	echo "<tr>";
-		// 	echo "<td>{$cat_id}</td>";
-		// 	echo "<td>{$cat_title}</td>";
-		// 	echo "<td><a class='btn gtn-danger' onclick= \"javascript: return confirm('Are you sure you want to delete?');\" href='catagories.php?delete={$cat_id}'>Delete</a></td>";
-		// 	echo "<td><a class='btn btn-primary' href='catagories.php?edit={$cat_id}'>Edit</a></td>";
-		// 	echo "</tr>";
-		// endwhile;
-		// mysqli_stmt_close($stmt2234);
-		// $db->close();
-	}
+	// function findAllCatagories(){
+	// 	global $db;
+	// 	$stmt2234 = $db->prepare("SELECT cat_id, cat_title FROM catagories");
+	// 	$stmt2234->execute();
+	// 	$stmt2234->store_result();
+	// 	$stmt2234->bind_result($cat_id, $cat_title);
+	// 	while($stmt2234->fetch()):
+	// 		echo "<tr>";
+	// 		echo "<td>{$cat_id}</td>";
+	// 		echo "<td>{$cat_title}</td>";
+	// 		echo "<td><a class='btn gtn-danger' onclick= \"javascript: return confirm('Are you sure you want to delete?');\" href='catagories.php?delete={$cat_id}'>Delete</a></td>";
+	// 		echo "<td><a class='btn btn-primary' href='catagories.php?edit={$cat_id}'>Edit</a></td>";
+	// 		echo "</tr>";
+	// 	endwhile;
+	// 	mysqli_stmt_close($stmt2234);
+	// 	$db->close();
+	// }
 
-	function deleteQuery(){
-		global $db;
-		if(isset($_GET['delete'])){
-			$cat_id = $_GET['delete'];
-			$mysqli = new mysqli($db['db_host'], $db['db_user'], $db['db_pass'], $db['db_name']);
-			$stmt5654 = $mysqli->prepare("DELETE FROM catagories WHERE cat_id = ?");
-			$stmt5654->bind_param("i", $cat_id);
-			$stmt5654->execute();
-			$stmt5654->close();
-			$mysqli->close();
-			echo "<p class='bg-success'>Catagory Deleted: <strong>" . $cat_id . "</strong></p>";
-		}
-	}
+	// function deleteQuery(){
+	// 	global $db;
+	// 	if(isset($_GET['delete'])){
+	// 		$cat_id = $_GET['delete'];
+	// 		$mysqli = new mysqli($db['db_host'], $db['db_user'], $db['db_pass'], $db['db_name']);
+	// 		$stmt5654 = $mysqli->prepare("DELETE FROM catagories WHERE cat_id = ?");
+	// 		$stmt5654->bind_param("i", $cat_id);
+	// 		$stmt5654->execute();
+	// 		$stmt5654->close();
+	// 		$mysqli->close();
+	// 		echo "<p class='bg-success'>Catagory Deleted: <strong>" . $cat_id . "</strong></p>";
+	// 	}
+	// }
 
     function escape($string){
 		global $db;
