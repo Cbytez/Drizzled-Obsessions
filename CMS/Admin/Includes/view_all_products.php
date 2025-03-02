@@ -64,13 +64,14 @@
         <tbody>
 
             <?php
+                global $db;
                 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-                $mysqli = new mysqli($db['db_host'], $db['db_user'], $db['db_pass'], $db['db_name']);
+                $db = new mysqli($db['db_host'], $db['db_user'], $db['db_pass'], $db['db_name']);
 
-                $stmt = $mysqli->prepare("SELECT p_id, p_name, p_catagory, p_description, p_price, p_status, p_listing FROM pastries");
+                $stmt = $mysqli->prepare("SELECT p_id, p_name, p_catagory, p_description, p_price, p_image,p_status, p_listing FROM pastries");
                 $stmt->execute();
                 $stmt->store_result();
-                $stmt->bind_result($p_id, $p_name, $p_catagory, $p_description, $p_price, $p_status, $p_listing);
+                $stmt->bind_result($p_id, $p_name, $p_catagory, $p_description, $p_price, $p_image, $p_status, $p_listing);
                 while($stmt->fetch()):
                     echo "<tr>";
                     ?>
@@ -81,12 +82,13 @@
                     echo "<td>{$p_catagory}</td>";
                     echo "<td>{$p_description}</td>";
                     echo "<td>{$p_price}</td>";
+                    echo "<td><img width='100' src='../images/{$p_image}' alt=''></td>";
                     echo "<td>{$p_status}</td>";
                     echo "<td>{$p_listing}</td>";
                     echo "</tr>";
                 endwhile;               
                 $stmt->close();
-                $mysqli->close();
+                $db->close();
             ?>
         </tbody>       
             
