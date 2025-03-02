@@ -1,28 +1,19 @@
 <?php 
 
-echo "Hello World From DB!";
-ob_start();
-	// $db = mysqli_connect('shareddb-z.hosting.stackcp.net', 'CMSAPP-313635097f', '2azoaez7ah', 'CMSAPP-313635097f');
+	echo "Hello World From DB!";
+	echo "<br>";
+	
+	ob_start();
 
-   //additional way of connecting to the database that we could use in the future below.
+	$db = new mysqli('localhost', 'Fatality', 'Yennefer0974', 'Drizzled_Obsessions');
 
-	$db['db_host'] = "localhost";
-	$db['db_user'] = "fatality";
-	$db['db_pass'] = "Yennefer0974";
-	$db['db_name'] = "Drizzled_Obsessions";
-
-	foreach ($db as $key => $value) {
-		define(strtoupper($key), ($value));
+	if($db->connect_error){
+		die('Connection Failed' . $db->connect_error);
+	}else{
+		echo "Connected Successfully";
 	}
-
-	$db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
 	
-	if ($db) {
-		echo "We are connected!";
-	}else{
-		echo "Not Connected!";
-	}
 
 
  ?>
