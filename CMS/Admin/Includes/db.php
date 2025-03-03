@@ -5,21 +5,23 @@
 	
 	ob_start();
 
-	$db['db_host'] = "localhost";
-	$db['db_user'] = "Fatality";
-	$db['db_pass'] = "Yennefer0974";
-	$db['db_name'] = "Drizzled_Obsessions";
+	$db = mysqli_connect('localhost', 'Fatality', 'Yennefer0974', 'Drizzled_Obsessions');
 
-	foreach ($db as $key => $value) {
-		define(strtoupper($key), $value);
-	}
+	// $db['db_host'] = "localhost";
+	// $db['db_user'] = "Fatality";
+	// $db['db_pass'] = "Yennefer0974";
+	// $db['db_name'] = "Drizzled_Obsessions";
 
-	$db = new mysqli($db['db_host'], $db['db_user'], $db['db_pass'], $db['db_name']);
+	// foreach ($db as $key => $value) {
+	// 	define(strtoupper($key), $value);
+	// }
 
-	if($db->connect_error){
-		die('Connection Failed' . $db->connect_error);
+	// $db = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
+	if ($db) {
+		echo "We are connected!";
 	}else{
-		echo "Connected Successfully";
+		echo "Not Connected!";
 	}
 
 	
