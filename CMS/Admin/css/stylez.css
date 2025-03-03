@@ -283,7 +283,7 @@ body{
   font-family: "sans-serif";
   width: 12rem;
   margin: 1rem auto;
-  padding: 1rem;
+  padding: .2rem 1rem;
 }
 
 .bulkOptions option{
@@ -392,7 +392,7 @@ body{
 
 form{
   width: 98%;
-  margin: 2rem auto;
+  margin: 1rem auto;
   text-align: center;
   font-size: 1.2rem;
   font-weight: bold;
