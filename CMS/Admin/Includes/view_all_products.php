@@ -38,7 +38,7 @@
     <table class="table table-bordered table-hover">
         <div id="bulkOptionsContainer" class="col-xs-2">
             <select class="form-control bulkOptions">
-                <option value="">Select Options</option>
+                <option class="fcb" value="">Select Options</option>
                 <option value="published">Published</option>
                 <option value="draft">Draft</option>
                 <option value="delete">Delete</option>

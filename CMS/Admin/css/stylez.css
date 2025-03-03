@@ -243,13 +243,13 @@ body{
   background-color: #000;
   border: 2px solid #00e6e4;
   border-radius: 20px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: bold;
   color: #00e6e4;
   font-family: "sans-serif";
   width: 10rem;
   margin: .5rem auto;
-  padding: 1rem;
+  padding: .5rem;
 }
 
 .button-primary:active, .button-success:active, .button-danger:active {
@@ -261,12 +261,13 @@ body{
 }
 
 .button-primary:hover, .button-success:hover, .button-danger:hover {
-  background-image: linear-gradient(to top, #000000, #2f171e, #592437, #863151, #b73e6c, #ba3f6e, #be4171, #c14273, #97385c, #702d46, #4b2230, #28161c);
-  border: 2px solid #000;
-  box-shadow: 0 0 10px #000;
+  background-color: #702d46;
+  /* background-image: linear-gradient(to top, #000000, #2f171e, #592437, #863151, #b73e6c, #ba3f6e, #be4171, #c14273, #97385c, #702d46, #4b2230, #28161c); */
+  border: 2px solid #00e6e4;
+  box-shadow: 0 0 10px #00e6e4;
   border-radius: 20px;
   color: #000;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   cursor: pointer;
   width: 12rem;
 }
@@ -289,14 +290,13 @@ body{
   background-color: #000;
   color: #00e6e4;
   font-family: "sans-serif";
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: bolder;
 }
 
 .bulkOptions:hover{
   background-color: #97385c;
   color: #000;
-  /* font-size: 1.5rem; */
   font-weight: bolder;
   border: 2px solid #000;
   box-shadow: 0 0 10px #000;
@@ -309,7 +309,7 @@ body{
   background-image: linear-gradient(to right bottom, #000000, #2f171e, #592437, #863151, #b73e6c, #ba3f6e, #be4171, #c14273, #97385c, #702d46, #4b2230, #28161c);
   border: 2px solid #00e6e4;
   border-radius: 20px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: bold;
 }
 
@@ -328,9 +328,27 @@ body{
   border-radius: 20px;
   cursor: pointer;
   color: #000;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
+/* Select options button */
+.fcb{
+  background-color: #000;
+  color: #00e6e4;
+  font-family: "sans-serif";
+  font-size: 1rem;
+  font-weight: bold;
+  height: 2rem;
+}
+
+.fcb:hover{
+  background-color: #000;
+  color: #00e6e4;
+  font-family: "sans-serif";
+  font-size: 1rem;
+  font-weight: bold;
+  height: 2rem;
+}
 /*   */
 
 .col-xs-2{
@@ -340,7 +358,7 @@ body{
   border: 1px solid rgba(255,255,255,0.18);
   border-radius: 20px;
   padding: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
   color: #00e6e4;
   font-family: "sans-serif";
@@ -376,7 +394,7 @@ form{
   width: 98%;
   margin: 2rem auto;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
   color: #00e6e4;
   font-family: "sans-serif";
@@ -466,7 +484,7 @@ h2{
   width: 95%;
   margin: 0 auto;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
   color: #00e6e4;
   font-family: "sans-serif";
@@ -481,7 +499,7 @@ h2{
   border-radius: 20px;
   background-color: #000;
   padding: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
   color: #97385c;
   font-family: "sans-serif";
@@ -495,7 +513,7 @@ h2{
   border: 1px solid rgba(255,255,255,0.18);
   border-radius: 20px;
   padding: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
   color: #00e6e4;
   font-family: "sans-serif";
