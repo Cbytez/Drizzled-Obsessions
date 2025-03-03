@@ -52,7 +52,7 @@ body{
 
 .admin_footer{
     background-color: #000;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: normal;
     color: #00e6e4;
     font-family: "AlexBrush-Regular";
@@ -449,7 +449,7 @@ footer{
   color: #00e6e4;
   position: relative;
   font-family: "AlexBrush-Regular";
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
   left: 0;
   bottom: 0;
