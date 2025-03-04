@@ -1,4 +1,5 @@
 <?php include "Includes/admin_header.php"; ?>
+<?php include "functions.php"; ?>
 
 <!DOCTYPE html>
 <html lang="en">
