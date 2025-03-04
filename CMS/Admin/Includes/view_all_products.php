@@ -1,36 +1,37 @@
 <?php
     global $db;
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-    if(isset($_POST['checkBoxArray'])){
-        foreach($_POST['checkBoxArray'] as $checkBoxValue){
-            $bulk_options = escape($_POST['bulk_options']);
 
-            switch($bulk_options){
-                case 'published':
-                    $stmt = $db->prepare("INSERT INTO pastries (p-id, p_listing) VALUES (?, ?)");
-                    $p_id = $checkBoxValue;
-                    $p_listing = $bulk_options;
-                    $stmt->bindParam('is', $p_id, $p_listing);
-                    $stmt->execute();
-                    $stmt->close();
-                    break;
+    if(isset($_POST['submit'])){
+        if(isset($_POST['checkBoxArray'])){
+            foreach($_POST['checkBoxArray'] as $checkBoxValue){
+                $bulk_options = escape($_POST['bulk_options']);
+                
+                switch($bulk_options){
+                    case 'published':
+                        $stmt = $db->prepare("UPDATE pastries SET p_listing = ? WHERE p_id = $checkBoxValue");
+                        $stmt->bindParam('s', $bulk_options);
+                        $stmt->execute();
+                        $stmt->close();
+                        break;
 
-                case 'draft':
-                    $stmt = $db->prepare("UPDATE pastries SET p_listing = ? WHERE p_id = $checkBoxValue");
-                    $stmt->bindParam('s', $bulk_options);
-                    $stmt->execute();
-                    $stmt->close();
-                    break;
+                    case 'draft':
+                        $stmt = $db->prepare("UPDATE pastries SET p_listing = ? WHERE p_id = $checkBoxValue");
+                        $stmt->bindParam('s', $bulk_options);
+                        $stmt->execute();
+                        $stmt->close();
+                        break;
 
-                case 'delete':
-                    $stmt = $db->prepare("DELETE FROM pastries WHERE p_id = $checkBoxValue");
-                    $stmt->execute();
-                    $stmt->close();
-                    break;
+                    case 'delete':
+                        $stmt = $db->prepare("DELETE FROM pastries WHERE p_id = $checkBoxValue");
+                        $stmt->execute();
+                        $stmt->close();
+                        break;
 
-                default:
-                    #code...
-                    break;
+                    default:
+                        #code...
+                        break;
+                }
             }
         }
     }

@@ -46,7 +46,7 @@
 
             switch($source){
                 case 'add_product':
-                    include "Includes/add_product.php";
+                    include "Includes/add_products.php";
                     break;
 
                     case '100':
