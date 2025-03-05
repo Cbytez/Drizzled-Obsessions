@@ -39,7 +39,7 @@
             <form action="Includes/add_products.php" method="post" enctype="multipart/form-data" class="product_form">
                 <div class="form-group">
                     <label for="product_name">Product Name</label>
-                    <input type="text" name="product_name" id="product_name" required>
+                    <input type="text" name="product_name" id="product_name" required autofocus>
                 </div>
 
                 <div class="form-group">
@@ -72,11 +72,13 @@
                     <input type="text" name="product_listing" id="product_listing" required>
                 </div>
 
-                <button type="submit" name="add_product">Add Product</button>
-                <a href="products.php">Back to Products</a>
-            </form>          
-                
-        </div>
-    </div>
+                <button type="submit" name="add_product" class="button-success">Add Product</button>
+                <a href="../products.php" class="button-btp">Back to Products</a>
+            </form>
+            <div class="footer">
+                <footer><h3>Copyright &copy; 2025 Drizzled Obsessions</h3></footer>
+            </div>
+        </div>        
+    </div>    
 </body>
 </html>
