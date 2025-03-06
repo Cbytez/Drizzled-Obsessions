@@ -1,5 +1,37 @@
 <?php include "functions.php"; ?>
 
+<?php
+
+if(isset($_POST['add_product'])){
+    global $db;
+
+    $p_name = escape($_POST['p_name']);
+    $p_catagory = escape($_POST['p_catagory']);
+    $p_description = escape($_POST['p_description']);
+    $p_price = $_POST['p_price'];
+    $p_image = $_POST['p_image'];
+    $p_status = escape($_POST['p_status']);
+    $p_listing = escape($_POST['p_listing']);
+    
+    
+    $stmt = $db->prepare("INSERT INTO products (p_name, p_catagory, p_description, p_price, p_image, p_status, p_listing) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssisss", $p_name, $p_catagory, $p_description, $p_price, $p_image, $p_status, $p_listing);
+    $stmt->execute();
+    $stmt->close();
+    $db->close();
+
+    if(!$stmt){
+        die("Query Failed" . mysqli_error($connection));
+    }else{
+        echo "Product Added Successfully";
+    }
+
+    redirect("../products.php");
+    
+    
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,40 +68,40 @@
         <div class="admin_content">
             <h2>Add Product</h2>
 
-            <form action="Includes/add_products.php" method="post" enctype="multipart/form-data" class="product_form">
+            <form action="" method="post" enctype="multipart/form-data" class="product_form">
                 <div class="form-group">
                     <label for="product_name">Product Name</label>
-                    <input type="text" name="product_name" id="product_name" required autofocus>
+                    <input type="text" name="p_name" id="p_name" required autofocus>
                 </div>
 
                 <div class="form-group">
                     <label for="product_catagory">Product Catagory</label>
-                    <input type="text" name="product_catagory" id="product_catagory" required>
+                    <input type="text" name="p_catagory" id="p_catagory" required>
                 </div>
 
                 <div class="form-group">
                     <label for="product_description">Product Description</label>
-                    <input type="text" name="product_description" id="product_description" required>
+                    <input type="text" name="p_description" id="p_description" required>
                 </div>
 
                 <div class="form-group">
                     <label for="product_price">Product Price</label>
-                    <input type="number" name="product_price" id="product_price" required>
+                    <input type="float" name="p_price" id="p_price" required>
                 </div>
 
                 <div class="form-group">
                     <label for="product_image">Product Image</label>
-                    <input type="file" name="product_image" id="product_image" required>
+                    <input type="file" name="p_image" id="p_image" required>
                 </div>
 
                 <div class="form-group">
                     <label for="product_status">Product Status</label>
-                    <input type="text" name="product_status" id="product_status" required>
+                    <input type="text" name="p_status" id="p_status" required>
                 </div>
 
                 <div class="form-group">
                     <label for="product_listing">Product Listing</label>
-                    <input type="text" name="product_listing" id="product_listing" required>
+                    <input type="text" name="p_listing" id="p_listing" required>
                 </div>
 
                 <button type="submit" name="add_product" class="button-success">Add Product</button>
