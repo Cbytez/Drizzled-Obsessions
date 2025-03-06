@@ -48,7 +48,8 @@
             </select>        
             <div class="btn-group">
                 <input type="submit" name="submit" class="button-success" value="Submit">
-                <button type="button" class="button-primary" name="add_product">Add Pastry</button>
+                <a href="Includes/add_products.php" class="button-success">Add Product</a>
+                
             </div>
         </div>
         <thead>

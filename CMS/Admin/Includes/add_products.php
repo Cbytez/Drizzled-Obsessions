@@ -4,7 +4,7 @@
 
 if(isset($_POST['add_product'])){
     global $db;
-
+    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
     $p_name = escape($_POST['p_name']);
     $p_catagory = escape($_POST['p_catagory']);
     $p_description = escape($_POST['p_description']);
@@ -20,6 +20,8 @@ if(isset($_POST['add_product'])){
     $stmt->close();
     $db->close();
 
+    
+
     if(!$stmt){
         die("Query Failed" . mysqli_error($connection));
     }else{
@@ -28,7 +30,7 @@ if(isset($_POST['add_product'])){
 
     redirect("../products.php");
     
-    
+   
 }
 ?>
 
