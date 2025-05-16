@@ -68,15 +68,21 @@
             <form action="" method="POST">
                 <h1>Register</h1>
                 <label for="username">Username</label>
-                <input type="text" name="username" placeholder="Username" required>
+                <input type="text" name="username" placeholder="Username" required autofocus>
+                <br>
                 <label for="email">Email</label>
                 <input type="email" name="email" placeholder="Email" required>
+                <br>
                 <label for="password">Password</label>
                 <input type="password" name="password" placeholder="Password" required>
+                <br>
                 <label for="confirm_password">Confirm Password</label>
                 <input type="password" name="confirm_password" placeholder="Confirm Password" required>
-                <button type="submit" name="submit">Register</button>
+                <br>
+                <button type="submit" name="submit" class="register-button">Register</button>
+                <br>
+                <p class="register-link">Already have an account? <a href="login.php">Login</a></p>
             </form>
-            <p>Already have an account? <a href="login.php">Login</a></p>
+            
         </div>
     </div>
