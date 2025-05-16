@@ -1,16 +1,44 @@
 <?php include "Includes/db.php"; ?> 
 <?php include "Includes/admin_header.php"; ?>
 <?php include "Includes/functions.php"; ?>
-session_start();
+<?php session_start(); ?>
 
 <?php
 
-    if($_SERVER['REQUEST_METHOD'] == "POST"){
-        $username = mysqli_real_escape_string($connection, $_POST['username']);
-        $user_password = mysqli_real_escape_string($connection, $_POST['user_password']);
+    $error = "";
 
-        $query = "SELECT * FROM users WHERE username = '$username' AND user_password = '$user_password'";
+    if($_SERVER['REQUEST_METHOD'] == "POST"){
+        $username = mysqli_real_escape_string($dbs, $_POST['username']);
+        $user_password = mysqli_real_escape_string($dbs, $_POST['user_password']);
+
+        $sql = "SELECT * FROM users WHERE username='$username' LIMIT 1";
+        $result = mysqli_query($dbs, $sql);
         
+
+        if(mysqli_num_rows($result) === 1){
+            $user = mysqli_fetch_assoc($result);
+
+            // var_dump($user);
+
+            if(password_verify($password, $user['password'])){
+                $_SESSION['logged_in'] = true;
+                $_SESSION['username'] = $user['username'];
+                $_SESSION['user_role'] = $user['user_role'];
+                
+                if(isAdmin($_SESSION['username'])){
+                    header('Location: admin.php');
+                    exit;
+                }else{
+                    header('Location: index.php');
+                    exit;
+                }
+            }else{
+                $error = "Invalid Password!";
+            }            
+            
+        }else{
+            $error = "User Not Found!";
+        }
     }
 ?>
 
@@ -30,6 +58,9 @@ session_start();
         <div class="container">
             <div class="login-form">
                 <form action="" role="form" method="POST">
+                    <?php if(!empty($error)): ?>
+                        <div class="error"><?php echo $error; ?></div>
+                    <?php endif; ?>
                         <h1 class="login-title">Sign In</h1>
                         <h2 class="login-subtitle">Please enter your username and password to login.</h2>
 
