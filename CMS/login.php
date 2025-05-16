@@ -1,18 +1,15 @@
-<?php include "Includes/db.php"; ?>
+<?php include "Includes/db.php"; ?> 
 <?php include "Includes/admin_header.php"; ?>
+<?php include "Includes/functions.php"; ?>
+session_start();
 
 <?php
 
-    if(isset($_POST['submit'])){
-        userLoginCheckAndRedirect('index.php');
-        
-        if (ifItIsMethod('post')) {
-            if (isset($_POST['username']) && isset($_POST['user_password'])) {
-                login_user($_POST['username'], $_POST['user_password']);
-            }else{		
-                echo "Login Failed, Username and/or password incorrect*";
-            }
-        }
+    if($_SERVER['REQUEST_METHOD'] == "POST"){
+        $username = mysqli_real_escape_string($connection, $_POST['username']);
+        $user_password = mysqli_real_escape_string($connection, $_POST['user_password']);
+
+        $query = "SELECT * FROM users WHERE username = '$username' AND user_password = '$user_password'";
         
     }
 ?>
@@ -32,7 +29,7 @@
     <body>
         <div class="container">
             <div class="login-form">
-                <form action="login.php" role="form" method="post">
+                <form action="" role="form" method="POST">
                         <h1 class="login-title">Sign In</h1>
                         <h2 class="login-subtitle">Please enter your username and password to login.</h2>
 
