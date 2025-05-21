@@ -11,5 +11,12 @@ function redirect($location){
     exit;
 }
 
+function isAdmin($username){
+    global $dbs;
+    $sql = "SELECT * FROM users WHERE username = '$username' AND user_role = 'admin' LIMIT 1";
+    $result = mysqli_query($dbs, $sql);
+    return (mysqli_num_rows($result) === 1);
+}
+
 
 ?>

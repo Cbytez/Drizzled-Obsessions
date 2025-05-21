@@ -40,7 +40,7 @@
                     if(mysqli_query($dbs, $sql)){
                         $_SESSION['logged_in'] = true;
                         $_SESSION['username'] = $username;
-                        header('Location: admin.php');
+                        header('Location: index.php');
                         exit();
                     }else{
                         echo "Error: NOT INSERTED". mysqli_error($dbs);

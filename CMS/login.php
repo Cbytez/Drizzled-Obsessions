@@ -1,6 +1,6 @@
 <?php include "Includes/db.php"; ?> 
 <?php include "Includes/admin_header.php"; ?>
-<?php include "Includes/functions.php"; ?>
+<?php include "functions.php"; ?>
 <?php session_start(); ?>
 
 <?php
@@ -8,8 +8,8 @@
     $error = "";
 
     if($_SERVER['REQUEST_METHOD'] == "POST"){
-        $username = mysqli_real_escape_string($dbs, $_POST['username']);
-        $user_password = mysqli_real_escape_string($dbs, $_POST['user_password']);
+        $username = escape($dbs, $_POST['username']);
+        $user_password = escape($dbs, $_POST['user_password']);
 
         $sql = "SELECT * FROM users WHERE username='$username' LIMIT 1";
         $result = mysqli_query($dbs, $sql);
@@ -20,18 +20,19 @@
 
             // var_dump($user);
 
-            if(password_verify($password, $user['password'])){
+            if(password_verify($user_password, $user['password'])){
                 $_SESSION['logged_in'] = true;
                 $_SESSION['username'] = $user['username'];
                 $_SESSION['user_role'] = $user['user_role'];
-                
-                if(isAdmin($_SESSION['username'])){
-                    header('Location: admin.php');
-                    exit;
-                }else{
-                    header('Location: index.php');
-                    exit;
-                }
+                redirect('index.php');
+
+                // if(isAdmin($_SESSION['username'])){
+                //     redirect('Admin/index.php');
+                   
+                // }else{
+                //     redirect('index.php');
+                    
+                // }
             }else{
                 $error = "Invalid Password!";
             }            
@@ -52,7 +53,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="CSS/Login-style.css">
-<title>Drizzled Obsessions Admin</title>
+<title>Drizzled Obsessions Login</title>
 </head>
     <body>
         <div class="container">
