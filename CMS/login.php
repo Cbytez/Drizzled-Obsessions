@@ -1,6 +1,6 @@
-<?php include "Includes/db.php"; ?> 
-<?php include "Includes/admin_header.php"; ?>
-<?php include "functions.php"; ?>
+<?php include 'db.php'; ?> 
+<?php include 'header.php'; ?>
+<?php include 'Admin/functions.php'; ?>
 <?php session_start(); ?>
 
 <?php
@@ -8,8 +8,8 @@
     $error = "";
 
     if($_SERVER['REQUEST_METHOD'] == "POST"){
-        $username = escape($dbs, $_POST['username']);
-        $user_password = escape($dbs, $_POST['user_password']);
+        $username = mysqli_real_escape_string($dbs, $_POST['username']);
+        $user_password = mysqli_real_escape_string($dbs, $_POST['user_password']);
 
         $sql = "SELECT * FROM users WHERE username='$username' LIMIT 1";
         $result = mysqli_query($dbs, $sql);
@@ -24,15 +24,14 @@
                 $_SESSION['logged_in'] = true;
                 $_SESSION['username'] = $user['username'];
                 $_SESSION['user_role'] = $user['user_role'];
-                redirect('index.php');
 
-                // if(isAdmin($_SESSION['username'])){
-                //     redirect('Admin/index.php');
-                   
-                // }else{
-                //     redirect('index.php');
-                    
-                // }
+                if(isAdmin($_SESSION['username'])){
+                    header('Location: Admin/index.php');
+                    exit;
+                }else{
+                    header('Location: index.php');
+                    exit;
+                }
             }else{
                 $error = "Invalid Password!";
             }            
@@ -67,7 +66,7 @@
 
                         <input type="text" name="username" placeholder="Username Required" class="login-input" required autofocus autocomplete="off">
 
-                        <input type="password" name="user_password" placeholder="Password Required" class="login-input" required autocomplete="off">
+                        <input type="password" name="user_password" placeholder="Password Required" class="login-input" required autocomplete="off"><br>
 
                         <button type="submit" name="submit" class="login-button">Login</button>
                

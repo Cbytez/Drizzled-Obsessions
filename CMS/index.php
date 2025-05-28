@@ -2,7 +2,7 @@
 
 <button class="logout_button" onclick="logout()">Logout</button>
 
-<?php include "Includes/footer.php"; ?>
+<?php include 'footer.php'; ?>
 
 <script type="text/javascript">
 function logout(){
