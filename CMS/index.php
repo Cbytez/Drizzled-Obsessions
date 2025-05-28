@@ -1,4 +1,8 @@
-<h1>Customer Area</h1>
+<?php include 'header.php'; ?>
+<?php session_start(); ?>
+<h1>Hello <?php echo $_SESSION['username']; ?></h1>
+
+<h1>Welcome to the Customer Area</h1>
 
 <button class="logout_button" onclick="logout()">Logout</button>
 
