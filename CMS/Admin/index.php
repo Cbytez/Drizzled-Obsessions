@@ -1,5 +1,9 @@
 <?php include "Includes/admin_header.php"; ?>
+<?php session_start(); ?>
 
+<?php
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +17,7 @@
         <h1 class="admin_header">Drizzled Obsessions Admin</h1>
 
         <div class="admin_content_head">
-            <h2 class="admin_content_header">Welcome to the admin panel</h2>            
+            <h2 class="admin_content_header">Welcome to the admin panel <?php echo $_SESSION['username']; ?></h2>            
         </div>
 
         

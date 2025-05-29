@@ -28,6 +28,10 @@
             <a href="order_info.php">Order Info</a>
             <a href="order_history.php">Order History</a>
             <a href="payment_info.php">Payment Info</a>
+            <?php if($_SESSION['user_role'] == 'admin'){ ?>
+                <a href="user-role.php">User Role</a>
+                <a href="Admin/index.php">Admin</a>
+            <?php } ?>
             </div>
         </div>
 
