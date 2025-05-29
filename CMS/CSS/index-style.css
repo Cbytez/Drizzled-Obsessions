@@ -1,0 +1,114 @@
+@font-face {
+    font-family: "AlexBrush-Regular";
+    src: url(../font/Alex/AlexBrush-Regular.ttf);
+}
+
+
+
+body{
+    background-color: #000000;
+    color: #00e6e4;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    /* background-image: linear-gradient(to right bottom, #000000, #2f171e, #592437, #863151, #b73e6c, #ba3f6e, #be4171, #c14273, #97385c, #702d46, #4b2230, #28161c); */
+    background-color: #000000;
+    color: #00e6e4;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.logout_button{
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: #00e6e4;
+    color: #000000;
+    border: 2px solid #00e6e4;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.logout_button:hover{
+    background-color: #000000;
+    color: #00e6e4;
+    border: 2px solid #00e6e4;
+    transition: all 0.3s ease;
+}
+
+.logout_button:active{
+    background-color: #00e6e4;
+}
+
+.navigation{
+     background-image: linear-gradient(to right bottom, #000000, #2f171e, #592437, #863151, #b73e6c, #ba3f6e, #be4171, #c14273, #97385c, #702d46, #4b2230, #28161c);
+    padding: 10px;
+    border-radius: 5px;
+    height: auto;
+    margin: 10px auto;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.navigation a{
+    
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #000;
+    text-decoration: none;
+    margin: 10px auto;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.navigation a:hover{
+    color: #00e6e4;
+    transition: all 0.2s ease;
+}
+
+.navigation a:active{
+    color: #00e6e4;
+    text-decoration: underline;
+    text-decoration-thickness: 5px;
+}
+
+
+
+.welcome_text{
+    font-family: sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.welcome_text1{
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}

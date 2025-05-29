@@ -43,7 +43,7 @@
                         header('Location: index.php');
                         exit();
                     }else{
-                        echo "Error: NOT INSERTED". mysqli_error($dbs);
+                        echo "Error: NOT Registered! ". mysqli_error($dbs);
                     }
                 }
             }

@@ -40,6 +40,9 @@
             $error = "User Not Found!";
         }
     }
+
+    //Close the database connection.
+    mysqli_close($dbs);
 ?>
 
 
