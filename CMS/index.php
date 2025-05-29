@@ -14,9 +14,12 @@
 </head>
 <body>
     <div class="container">
+
+    <h1 class="welcome_text1">Drizzled Obsessions Members Area</h1>
+
         <h1 class="welcome_text">Hello <?php echo $_SESSION['username']; ?></h1>
 
-        <h1 class="welcome_text1">Welcome to the Members Area</h1>
+       
 
         <div class="navigation">
             <div id="navigation_links">
@@ -30,7 +33,9 @@
 
         <button class="logout_button" onclick="logout()">Logout</button>
     </div>
-    <?php include 'footer.php'; ?>
+   <div class="footer">
+    <p>Copyright &copy; 2025 Drizzled Obsessions. All rights reserved.</p>
+   </div>
 </body>
 </html>
 

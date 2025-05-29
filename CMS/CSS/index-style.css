@@ -3,7 +3,13 @@
     src: url(../font/Alex/AlexBrush-Regular.ttf);
 }
 
-
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body{
     background-color: #000000;
@@ -14,6 +20,7 @@ body{
     box-sizing: border-box;
 }
 
+/* Container */
 .container{
     /* background-image: linear-gradient(to right bottom, #000000, #2f171e, #592437, #863151, #b73e6c, #ba3f6e, #be4171, #c14273, #97385c, #702d46, #4b2230, #28161c); */
     background-color: #000000;
@@ -22,13 +29,33 @@ body{
     margin: 0 auto;
 }
 
+.footer{
+    background-color: #000000;
+    color: #00e6e4;
+    font-family: "AlexBrush-Regular";
+    font-size: 2rem;
+    font-weight: bolder;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-transform: capitalize;
+    width: auto !important;
+    height: auto !important;
+    z-index: 1000;
+}
+
+/* Logout Button */
 .logout_button{
-    font-family: sans-serif;
-    font-size: 1.2rem;
+    font-family: "AlexBrush-Regular";
+    font-size: 1.75rem;
     font-weight: bolder;
     text-align: center;
     text-decoration: none;
-    text-transform: uppercase;
+    text-transform: capitalize;
     letter-spacing: 1px;
     background-color: #00e6e4;
     color: #000000;
@@ -54,6 +81,7 @@ body{
     background-color: #00e6e4;
 }
 
+/* Navigation */
 .navigation{
      background-image: linear-gradient(to right bottom, #000000, #2f171e, #592437, #863151, #b73e6c, #ba3f6e, #be4171, #c14273, #97385c, #702d46, #4b2230, #28161c);
     padding: 10px;
@@ -69,9 +97,9 @@ body{
     
     font-family: sans-serif;
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: bolder;
     text-decoration: none;
-    text-transform: uppercase;
+    text-transform: capitalize;
     letter-spacing: 1px;
     color: #000;
     text-decoration: none;
@@ -79,12 +107,13 @@ body{
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    transition: all 0.3s ease;
 }
 
 .navigation a:hover{
     color: #00e6e4;
     transition: all 0.2s ease;
+    text-decoration: underline;
+    text-decoration-thickness: 5px;
 }
 
 .navigation a:active{
@@ -93,22 +122,27 @@ body{
     text-decoration-thickness: 5px;
 }
 
-
-
+/* Welcome Text */
 .welcome_text{
-    font-family: sans-serif;
-    font-size: 2rem;
+    font-family: "AlexBrush-Regular";
+    font-size: 2.5rem;
     font-weight: bold;
     text-decoration: none;
-    text-transform: uppercase;
+    text-transform: capitalize;
     letter-spacing: 1px;
 }
 
 .welcome_text1{
-    font-family: sans-serif;
-    font-size: 1.5rem;
+    font-family: "AlexBrush-Regular";
+    font-size: 3rem;
     font-weight: bold;
+    font-style: italic;
     text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    text-transform: capitalize;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+    width: auto !important;
 }

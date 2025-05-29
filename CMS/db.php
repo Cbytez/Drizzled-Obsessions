@@ -8,9 +8,9 @@ $name = "Drizzled_Obsessions";
 $dbs = mysqli_connect($host, $user, $pass, $name);
 
 if ($dbs) {
-	echo "We are connected Fool!";
+	echo "We are connected Fool!<br>";
 }else{
-	echo "Not Connected!";
+	echo "Not Connected!<br>";
 }
 
  ?>
