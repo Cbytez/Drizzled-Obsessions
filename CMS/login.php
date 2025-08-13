@@ -42,7 +42,7 @@
     }
 
     //Close the database connection.
-    $dbs = null;
+    close();
 ?>
 
 
