@@ -15,7 +15,7 @@ function isAdmin($username){
     global $dbs;
     $sql = "SELECT * FROM users WHERE username = '$username' AND user_role = 'admin' LIMIT 1";
     $result = $dbs->query($sql);
-    return (mysqli_num_rows($result) === 1);
+    return $result->rowCount() === 1;
 }
 
 
