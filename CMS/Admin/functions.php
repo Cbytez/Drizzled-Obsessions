@@ -2,8 +2,8 @@
 
 <?php
 function escape($string){
-    global $db;
-    return mysqli_real_escape_string($db, trim($string));
+    global $dbs;
+    return mysqli_real_escape_string($dbs, trim($string));
 }
 
 function redirect($location){
@@ -14,7 +14,7 @@ function redirect($location){
 function isAdmin($username){
     global $dbs;
     $sql = "SELECT * FROM users WHERE username = '$username' AND user_role = 'admin' LIMIT 1";
-    $result = mysqli_query($dbs, $sql);
+    $result = $dbs->query($sql);
     return (mysqli_num_rows($result) === 1);
 }
 

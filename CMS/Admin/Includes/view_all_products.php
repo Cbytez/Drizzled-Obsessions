@@ -1,5 +1,5 @@
 <?php
-    global $db;
+    global $dbs;
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
     if(isset($_POST['submit'])){
@@ -9,21 +9,21 @@
                 
                 switch($bulk_options){
                     case 'published':
-                        $stmt = $db->prepare("UPDATE pastries SET p_listing = ? WHERE p_id = $checkBoxValue");
+                        $stmt = $dbs->prepare("UPDATE pastries SET p_listing = ? WHERE p_id = $checkBoxValue");
                         $stmt->bindParam('s', $bulk_options);
                         $stmt->execute();
                         $stmt->close();
                         break;
 
                     case 'draft':
-                        $stmt = $db->prepare("UPDATE pastries SET p_listing = ? WHERE p_id = $checkBoxValue");
+                        $stmt = $dbs->prepare("UPDATE pastries SET p_listing = ? WHERE p_id = $checkBoxValue");
                         $stmt->bindParam('s', $bulk_options);
                         $stmt->execute();
                         $stmt->close();
                         break;
 
                     case 'delete':
-                        $stmt = $db->prepare("DELETE FROM pastries WHERE p_id = $checkBoxValue");
+                        $stmt = $dbs->prepare("DELETE FROM pastries WHERE p_id = $checkBoxValue");
                         $stmt->execute();
                         $stmt->close();
                         break;
@@ -68,13 +68,13 @@
         <tbody>
 
             <?php
-                global $db;
+                global $dbs;
                 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);                
-
-                $stmt = $db->prepare("SELECT p_id, p_name, p_catagory, p_description, p_price, p_image, p_status, p_listing FROM pastries");
+                $query = "SELECT p_id, p_name, p_catagory, p_description, p_price, p_image, p_status, p_listing FROM pastries";
+                $stmt = $dbs->prepare($query);
                 $stmt->execute();
                 $stmt->store_result();
-                $stmt->bind_result($p_id, $p_name, $p_catagory, $p_description, $p_price, $p_image, $p_status, $p_listing);
+                $stmt->bind_result($p_id, $p_name, $p_catagory, $p_description, $p_price, $p_image, $p_status, $p_listing);                
                 while($stmt->fetch()):
                     echo "<tr>";
                     ?>
@@ -92,7 +92,7 @@
                     echo "</tr>";
                 endwhile;               
                 $stmt->close();
-                $db->close();
+                $dbs->close();
             ?>
         </tbody>       
             

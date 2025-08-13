@@ -8,15 +8,15 @@
     $error = "";
 
     if($_SERVER['REQUEST_METHOD'] == "POST"){
-        $username = mysqli_real_escape_string($dbs, $_POST['username']);
-        $user_password = mysqli_real_escape_string($dbs, $_POST['user_password']);
+        $username = htmlspecialchars($_POST['username']);
+        $user_password = htmlspecialchars($_POST['user_password']);
 
         $sql = "SELECT * FROM users WHERE username='$username' LIMIT 1";
-        $result = mysqli_query($dbs, $sql);
+        $result = $dbs->query($sql);
         
 
-        if(mysqli_num_rows($result) === 1){
-            $user = mysqli_fetch_assoc($result);
+            if($result->rowCount() === 1){
+            $user = $result->fetch(PDO::FETCH_ASSOC);
 
             // var_dump($user);
 
@@ -42,7 +42,7 @@
     }
 
     //Close the database connection.
-    mysqli_close($dbs);
+    $dbs = null;
 ?>
 
 

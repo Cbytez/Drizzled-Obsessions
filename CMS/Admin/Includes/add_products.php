@@ -3,22 +3,22 @@
 <?php
 
 if(isset($_POST['add_product'])){
-    global $db;
+    global $dbs;
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-    $p_name = escape($_POST['p_name']);
-    $p_catagory = escape($_POST['p_catagory']);
-    $p_description = escape($_POST['p_description']);
+    $p_name = htmlspecialchars($_POST['p_name']);
+    $p_catagory = htmlspecialchars($_POST['p_catagory']);
+    $p_description = htmlspecialchars($_POST['p_description']);
     $p_price = $_POST['p_price'];
     $p_image = $_POST['p_image'];
-    $p_status = escape($_POST['p_status']);
-    $p_listing = escape($_POST['p_listing']);
+    $p_status = htmlspecialchars($_POST['p_status']);
+    $p_listing = htmlspecialchars($_POST['p_listing']);
     
-    
-    $stmt = $db->prepare("INSERT INTO products (p_name, p_catagory, p_description, p_price, p_image, p_status, p_listing) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $query = "INSERT INTO products (p_name, p_catagory, p_description, p_price, p_image, p_status, p_listing) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    $stmt = $dbs->prepare($query);
     $stmt->bind_param("sssisss", $p_name, $p_catagory, $p_description, $p_price, $p_image, $p_status, $p_listing);
     $stmt->execute();
     $stmt->close();
-    $db->close();
+    $dbs->close();
 
     
 
