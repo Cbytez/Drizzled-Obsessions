@@ -3,7 +3,7 @@
 <?php
 function escape($string){
     global $dbs;
-    return mysqli_real_escape_string($dbs, trim($string));
+    return htmlspecialchars(trim($string));
 }
 
 function redirect($location){
@@ -17,6 +17,28 @@ function isAdmin($username){
     $result = $dbs->query($sql);
     return $result->rowCount() === 1;
 }
+
+function query($query){
+        global $dbs;
+        return $dbs->query($query);
+}
+
+function fetch($result){
+    global $dbs;
+    return $result->fetch(PDO::FETCH_ASSOC);
+}
+
+function rowCount($result){
+    global $dbs;
+    return $result->rowCount();
+}
+
+function close(){
+    global $dbs;
+    $dbs = null;
+}
+
+
 
 
 ?>
